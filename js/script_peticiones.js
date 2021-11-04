@@ -39,11 +39,47 @@ $.ajax({
 });
 
 const user = {
-    userName : "Keff",
-    email : "nombrekeff@gmail.com",
-    image : "https://res.cloudinary.com/practicaldev/image/fetch/s--EcNvkhmC--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/187971/a5359a24-b652-46be-8898-2c5df32aa6e0.png",
-    name : "Keff Dev"
+    userName : "sgoulas",
+    email : "sgoulas@devto.com",
+    image : "https://res.cloudinary.com/practicaldev/image/fetch/s--QLm_gIcF--/c_fill,f_auto,fl_progressive,h_320,q_auto,w_320/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/417615/142b6299-2605-443a-8bb7-a0bb4f6b4839.jpeg",
+    name : "S goulas"
 }
+
+const dateObj = new Date(Date.UTC(2021, 10, 30, 0, 0, 0));
+const month = dateObj.getMonth(); //months from 1-12
+const day = dateObj.getDate();
+const year = dateObj.getFullYear();
+const week = getWeek(dateObj);
+
+const post = {    
+    user: "sgoulas",
+    title : "I created an e-commerce site from scratch and kept a development diary over the course of 5 months",
+    content : "Hello all,"
+
+    +"I recently finished working on a personal project where I set up to create a simple e-commerce project from scratch in order to learn some new things and I would like to share it with anyone that might be interested."
+        
+    +"The stack includes: material-ui, nextjs, redux, redux-saga, redux-toolkit, jest with react-testing-library, apollo and more."
+    
+    +"I also tried to implemet SEO features like open graph protocol and structured metadata and validated the mark up and the application's accessibility through W3C and WAVE validators."
+    
+    +"The biggest point of interest in my opinion is the documentation. I kept a detailed development diary (over the span of 5 months) for each day I worked on the project which includes all my decisions (style / architecture / technology stack) as well as almost all the problems I faced and the crossroads I found myself on. In that regard, the project might be useful to junior and maybe medior developers that often wonder 'how do I start creating something from scratch?' or faced similar problems in their projects.",
+    tags : {
+        t1 : "react",
+        t2 : "javascript",
+        t3 : "webdev",
+        t4 : "nextjs"
+    },
+    coverImage : "https://res.cloudinary.com/practicaldev/image/fetch/s--zZKBz_CE--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/zibj168e2c9xsdlojexh.png",
+    datePublication : {
+        day : day,
+        month : month,
+        year : year,
+        week : week
+    },
+    image : "",
+    likes : 356, 
+    comments : 11   
+};
 
 const save = () => {
     $.ajax({
@@ -71,33 +107,6 @@ function getWeek(currentDate){
 
 };
 
-const dateObj = new Date();
-const month = dateObj.getUTCMonth() + 1; //months from 1-12
-const day = dateObj.getUTCDate();
-const year = dateObj.getUTCFullYear();
-const week = getWeek(dateObj);
-
-const post = {    
-    user: "AmnaAbd",
-    title : "JavaScript tips & tricks",
-    content : "Description 😋 This is a collection of JavaScript tips and tricks. you can refer to it and apply it to make your code more concise. But don't overdo it, it can make your code difficult to read and maintain. Hope everyone contributes, thanks. Table Of Content 📃 Description Table Of Content Array Object Destructuring Operator Comparison Others",
-    tags : {
-        t1 : "typescript",
-        t2 : "javascript",
-        t3 : "bugs",
-        t4 : "regexp"
-    },
-    coverImage : "https://res.cloudinary.com/practicaldev/image/fetch/s---HtCca8l--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/578hv3qdakkb3r3ptoui.png",
-    datePublication : {
-        day : day,
-        month : month,
-        year : year,
-        week : week
-    },
-    image : "",
-    likes : 3, 
-    comments : 1   
-};
 
 const savePost = () => {
     $.ajax({
