@@ -13,3 +13,11 @@
     font-weight: 600;
     margin:5px;
 }
+@mixin displayFlexBox($display, $direction, $justify, $aling, $wrap){
+    display: $display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $aling;
+    flex-wrap: $wrap;
+}
+
