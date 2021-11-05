@@ -39,21 +39,43 @@
 // y a la altura un boton con la clase 'btn btn-light' que siga 'save'
 //
 
+const filtherSearch = (response, imputValue)=> {
+const consultObject = Object.entries(response)
+//console.log(consultObject)
+let filtherArray = []
+consultObject.forEach(element => {
+    postContent = element[1].content
+ 
+     
+    
+ if (postContent.includes(imputValue)) {
+     filtherArray.push(element)
+     return console.log(filtherArray)
+ } 
+ else{
+     return console.log(filtherArray)
+ }
+  
+})
+}
 
 const button = $('#buttonSearchNav').click(function () {
-    
-    $.ajax({
+    const imputValue = $('#navBarSearch').val()
+  
+   $.ajax({
                 method:'GET',
-                url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/users/.json',
+                url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
                 data: JSON.stringify(),
-                success:() => {
-                    const saveUser =
-                },
+                success:(response) => {
+                console.log(filtherSearch(response, imputValue))
+
+                 },
+
                 error:(error) => {
                     console.log(error);
                 },
         
-                async:true,
+                async:true, 
             });
 })
 
