@@ -72,7 +72,6 @@ const renderPosts = (response) => {
 
         const tags = Object.values(post[1].tags);
         tags.forEach(tag => {
-            console.log(tag, 'tag')
             const anchorTag = $(`<a href="#" class="text-black-50 me-3"><span class="text-black-50">#</span>${tag}</a>`);
             divTagsPost.append(anchorTag);
         })
@@ -117,6 +116,7 @@ const renderPosts = (response) => {
         const timeRead = 6;
         const smallTextTime = $(`<small class="me-1">${timeRead} min read</small>`);
         const buttonSavePost = $('<button class="btn btn-light">Delete</button>');
+        buttonSavePost.attr({id:post[0]});
         
         divReadTimerPost.append(smallTextTime);
         divReadTimerPost.append(buttonSavePost);
