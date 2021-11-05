@@ -71,8 +71,10 @@ body{
   }
 
 .inputContainer {
-    margin-top: 40px;
-    padding: 0 30px 0 10px;
+    margin: 40px 0 10px 0;
+    padding: 0 30px 0 20px;
+    // pointer-events: none;
+
 }
 
 .newPostBarBackground {
@@ -83,18 +85,79 @@ body{
     width: 90%;
     font-size: 40px;
     font-weight: bolder;
+    border: none;
+    // pointer-events: none;
+
 }
 
 .inputAddTags {
-    width:90%;
+    width: 90%;
     font-size:15px;
-    padding: 0 30px 0 10px;
+    border: none;
+    font-family: inherit;
+    color: gray;
+    margin-top: 20px;
 }
 
-.inputForTags {
-    padding: 0 30px 0 10px;
+.imgContainer {
+    margin-top: 25px;
+    padding: 10px 30px 10px 20px;
+    background: #F9F9F9
+}
+
+.formContainer {
+    margin-top: 25px;
+    padding: 0 30px 0 20px;
+
 }
 
 .textArea {
     margin-bottom: 35px;
+    border: none;
+    width: 90%;
+    // pointer-events: nones;
+
 }
+
+.finalbuttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1rem 1rem 1rem 9rem;
+}
+
+.submitbutton {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: rgb(37, 37, 255);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 10px 0 0;
+}
+    .submitbutton:hover {
+        background: rgb(48, 29, 160);
+    }
+
+
+.userImg {
+    border: none;
+    background: #F9F9F9;
+    width: 90%
+}
+.saveDraft {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 10px 0 0;
+    background: #d1cfcf;
+    color: rgb(48, 43, 43);
+}
+
+.saveDraft:hover {
+    background: #b4adad;
+}
+

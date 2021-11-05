@@ -3,7 +3,7 @@ $.ajax({
     url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/tags/.json',
     data: JSON.stringify({}),
     success: (response) => {
-        console.log(response, "response")
+        renderResult(response)
     },
     error: (error) => {
         console.log(error);
@@ -11,16 +11,14 @@ $.ajax({
     async: true,
 });
 
+
 const renderResult = (response) => {
 
     const result = Object.values(response);
 
     result.forEach(element => {
-
-        console.log(element.datePublication);
-
-    });
-    
+        $("#tagSelector").append(`<option value="${element}" id="${element}">${element}</option>`);
+    });   
 };
 
 
@@ -110,3 +108,27 @@ const month = dateObj.getUTCMonth() + 1;
 const day = dateObj.getUTCDate();
 const year = dateObj.getUTCFullYear();
 const week = getWeek(dateObj);
+
+let tagValue2 ="";
+let tags =[];
+
+$(document).on("change", "#tagSelector", ()=> {
+    tagValue2 = $("#tagSelector option:selected").text();
+    tags.push(tagValue2)
+})
+
+let postArray =
+
+
+$("#saveButton").click((response) => {
+    let titlePost = $("#titlePost").val();
+    let postTags = $("#postTags").val();
+    let postBody = $("#postBody").val();
+    let postImg = $("#postImg").val();
+    
+    let aaaaa = tags;
+    // tagValueOption.selected ? Option.text
+})
+
+
+

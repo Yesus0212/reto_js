@@ -48,55 +48,37 @@
     <div class="container">
         <div class="row">
             <div class="col-g-7 col-md-7 col-s-12 editNewPost">
-                <p class="inputContainer">
-                <input class ="inputNewTitle" type="text" placeholder="New post title here...">
-                </p>
-                <div class="inputForTags">
-                <p>
-                    <input class ="inputAddTags" type="text" placeholder="Add up to 4 tags...">
-                </p>
-                    <textarea name="texto" id="" cols="30" rows="10" class="inputAddTags textArea" placeholder="Write your comment here..."></textarea>
-                    <!-- <input class ="inputAddTags" type="text" placeholder="Write your comment here..."> -->                
+                <div class="inputContainer">
+                <div>
+                <input class ="inputNewTitle" type="text" placeholder="New post title here..." id="titlePost" value="">
+                </div>
+                <!-- <div>
+                <input class ="inputAddTags" type="text" placeholder="Add up to 4 tags..." id="postTags" value="">
+                </div> -->
+                <div>
+                    <select name="select" id="tagSelector" class="inputAddTags">
+                        <option value="" class="inputAddTags">Add up to 4 tags...</option>
+                    </select>
+                </div>
+                </div>
+                <div class="imgContainer">
+                    <svg width="24" height="24" viewBox="0 0 24 24" class="crayons-icon" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true"><title id="a17qec5pfhrwzk9w4kg0tp62v27qqu9t">Upload image</title><path d="M20 5H4v14l9.292-9.294a1 1 0 011.414 0L20 15.01V5zM2 3.993A1 1 0 012.992 3h18.016c.548 0 .992.445.992.993v16.014a1 1 0 01-.992.993H2.992A.993.993 0 012 20.007V3.993zM8 11a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+                    <input type="text" name="userImg" class="userImg" placeholder="URL image" id="postImg" value="">
+                </div>
+                <div class="formContainer">                
+                    <textarea name="texto" cols="30" rows="20" class="textArea" placeholder="Write your post here..." id="postBody" >Hola a todos</textarea>            
                </div>
 
+            </div>
+        </div>
+    </div>
 
+    <div class="container ">
+        <div class="row">
+            <div class = "col-g-7 col-md-7 col-s-12 finalbuttons">
+                <button class="submitbutton" id="saveButton">Publish</button>
+                <button class="saveDraft">Save Draft</button>
 
-                <!-- <form>
-                    <div>
-                        <div>
-                            <div>
-                                <label for="">
-                                    <input type="text">
-                                </label>
-                            </div>
-                            <div>
-                                <textarea name="" id="" cols="30" rows="10">
-
-                                </textarea>
-                            </div>
-                            <div>
-                                <div>
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div>
-                                <div>
-                                    <div>
-                                        <label for="">
-                                            svg
-                                            <input type="text">
-                                        </label>
-                                    </div>
-                                    <div>
-                                        <textarea name="" id="" cols="30" rows="10">
-
-                                        </textarea>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form> -->
             </div>
         </div>
     </div>
