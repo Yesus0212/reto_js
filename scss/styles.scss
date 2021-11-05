@@ -1,11 +1,12 @@
 @import "_global.scss";
 @import "_mixins.scss";
 @import "navbar";
-@import "codeBanner";
+@import "_codeBanner";
 @import "_LSbar.scss";
 
 @import "asideR";
 @import "_body";
 @import 'post';
+@import "_newPost";
 @import "_notify.scss";
 @import "footer";
