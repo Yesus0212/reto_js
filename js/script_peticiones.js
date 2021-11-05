@@ -6,18 +6,13 @@
 const renderResult = (response) => {
 
     // const result = Object.keys(response);
-    // const result2 = Object.entries(response);
-    const result = Object.values(response);
+    const result2 = Object.entries(response);
+    // const result = Object.values(response);
 
-    console.log(result);
-
-    result.forEach(element => {
-
+    result2.forEach(element => {
         // const date = new Date(element.datePublication);
         // console.log(date);
-
-        console.log(element.datePublication);
-
+        //console.log(element[1].likes);
 
     });
 
