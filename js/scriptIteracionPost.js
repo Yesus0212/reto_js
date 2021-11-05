@@ -60,7 +60,7 @@ const renderPosts = (response) => {
         // Div contenedor Titulo
         const divTitlePost = $('<div class="card-title mb-3"></div>');
         const h2Title = $('<h2></h2');
-        const anchorTitle = $('<a href="./pages/post.html" class="text-dark fw-bolder"></a>');
+        const anchorTitle = $(`<a href="./pages/post.html?&p=${post[0]}" class="text-dark fw-bolder"></a>`);
         
         // DATO DINAMICO PARA EL TITULO
         const title = post[1].title;
