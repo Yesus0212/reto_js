@@ -114,24 +114,11 @@ const renderPosts = (response) => {
         const timeRead = 6;
         const smallTextTime = $(`<small class="me-1">${timeRead} min read</small>`);
         const buttonSavePost = $('<button class="btn btn-light">Delete</button>');
-        buttonSavePost.attr({id:post[0]});
-       
-        buttonSavePost.click(() => {
-
-            console.log(this.id);
-
-            $.ajax({
-                method: 'DELETE',
-                url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${post[0]}.json`,
-                data: JSON.stringify({}),
-                success: (response) => {
-                    searchPosts();
-                },
-                error: (error) => {
-                    console.log(error);
-                },
-                async: true,
-            });
+        buttonSavePost.attr("data-post", post[0]);
+               
+        buttonSavePost.click((event) => {
+            postId = event.target.dataset.post;
+            deletePost(postId, event);         
         });
                
         divReadTimerPost.append(smallTextTime);
@@ -167,6 +154,25 @@ const searchPosts = () => {
         data: JSON.stringify({}),
         success: (response) => {
             renderPosts(response);
+        },
+        error: (error) => {
+            console.log(error);
+        },
+        async: true,
+    });
+};
+
+const deletePost = (postId, event) => {
+    
+    console.log(event);
+
+    $.ajax({
+        method: 'DELETE',
+        url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${postId}.json`,
+        data: JSON.stringify({}),
+        success: (response) => {            
+            console.log(response);
+            event.target.offsetParent.remove();
         },
         error: (error) => {
             console.log(error);
