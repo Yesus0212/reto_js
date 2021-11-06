@@ -40,10 +40,10 @@
 
 
 const filtherSearch = (response, imputValue)=> {
-const consultObject = Object.entries(response)
+
 //console.log(consultObject)
 let filtherArray = []
-consultObject.forEach(element => {
+response.forEach(element => {
     postContent = element[1].content
  
      
@@ -59,27 +59,13 @@ consultObject.forEach(element => {
  // return filtherArray
 })
 // return filtherArray
-console.log(filtherArray)
+console.log(filtherArray, 'resultadofilther')
 renderPosts(filtherArray)
 }
 
 const button = $('#buttonSearchNav').click( () => {
     const imputValue = $('#navBarSearch').val()
-  
-   $.ajax({
-                method:'GET',
-                url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
-                data: JSON.stringify(),
-                success:(response) => {
-                console.log(filtherSearch(response, imputValue))
-                
-                 },
-
-                error:(error) => {
-                    console.log(error);
-                },
-        
-                async:true, 
-            });
+   filtherSearch(postList, imputValue)
+       
 })
 

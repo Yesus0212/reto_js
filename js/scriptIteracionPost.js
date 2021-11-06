@@ -1,6 +1,6 @@
-const renderPosts = (response) => {
+let postList 
+const renderPosts = (posts) => {
 
-    const posts = typeof(response) === "object"? Object.entries(response):response;
     
     // Div contenedor de las cards
     const divBody = $('div .main_card');
@@ -162,7 +162,9 @@ const searchPosts = () => {
         url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
         data: JSON.stringify({}),
         success: (response) => {
-            renderPosts(response);
+            postList = Object.entries(response)
+            
+            renderPosts(postList);
         },
         error: (error) => {
             console.log(error);
