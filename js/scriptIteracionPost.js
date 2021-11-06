@@ -1,6 +1,12 @@
 const renderPosts = (response) => {
-    
-    const posts = Object.entries(response);
+    let posts
+    if (typeof(response).normalize === 'Object') {
+         posts = Object.entries(response);
+    }
+    else{
+        posts = response
+    }
+   
 
     posts.forEach(post => {
         

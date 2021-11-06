@@ -3,20 +3,12 @@
 // integrale al boton un evento click que ejecute la siguiente funcion:
 
 // realiza la peticion a la base de datos  con Get
-<<<<<<< HEAD
 // guarda ese resultado en una variable ???
 // filtra los resultados con base en los terminos de busqueda
 // 
 
 // muestra en pantalla los resultados de la busqueda, esto se hace de la siguiente forma: 
 // 1.- limpia el div donde se guardan todos los post que tiene la clase 'col-lg-6 col-md-6 col-sm-10 main_body
-=======
-// guarda ese resultado en una variable
-// filtra los resultados con base en los terminos de busqueda
-
-// muestra en pantalla los resultados de la busqueda, esto se hace de la siguiente forma: 
-// 1.- limpia el div donde se guardan todos los post
->>>>>>> dev_peticiones
 // 2.- el objeto que te sale como resultado del filtrado debe llenar un div con la clase card rounded-3 mb-2
 // 3.- dentro de ese div debe haber una etiqueta article con la clase 'card-body'
 //  4.- dentro de article habra un div con la clase 'd-flex'
@@ -35,7 +27,6 @@
 // 12.- El tercer div tendra la clase 'd-flex justify-content-between', en su interior llevara un div con la clase 'd-flex align-items-center'
 //icono de corazon
 // 13.- crear dentro de dicho div un anchord con la clase 'me-3', dentro del anchord una etiqueta svg con xmlns='http://www.w3.org/2000/svg' widht= '24' height= '24'
-<<<<<<< HEAD
 // dentro de la etiqueta svg una path con d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"
 // a su altura una etiqueta p con clase 'd-inline-block text-dark m-0' que contenga el numero de reacciones
 // a su altura un span con clase 'text-dark m-0' que contenga el texto 'reactions'
@@ -46,7 +37,7 @@
 // a su altura un span con clase 'text-dark m-0' que contenga el texto 'reactions'
 // 15.- a la altura de los divs de los iconos  va un div sin clase que lleva dentro una etiqueta small con la clase me-1 con el tiempo de lectura '6 min read'                                             
 // y a la altura un boton con la clase 'btn btn-light' que siga 'save'
-//
+
 
 const filtherSearch = (response, imputValue)=> {
 const consultObject = Object.entries(response)
@@ -59,16 +50,20 @@ consultObject.forEach(element => {
     
  if (postContent.includes(imputValue)) {
      filtherArray.push(element)
-     return console.log(filtherArray)
+     
+    
  } 
  else{
-     return console.log(filtherArray)
+    filtherArray
  }
-  
+ // return filtherArray
 })
+// return filtherArray
+console.log(filtherArray)
+renderPosts(filtherArray)
 }
 
-const button = $('#buttonSearchNav').click(function () {
+const button = $('#buttonSearchNav').click( () => {
     const imputValue = $('#navBarSearch').val()
   
    $.ajax({
@@ -77,7 +72,7 @@ const button = $('#buttonSearchNav').click(function () {
                 data: JSON.stringify(),
                 success:(response) => {
                 console.log(filtherSearch(response, imputValue))
-
+                
                  },
 
                 error:(error) => {
@@ -87,11 +82,4 @@ const button = $('#buttonSearchNav').click(function () {
                 async:true, 
             });
 })
-=======
-// dentro de la etiqueta svg una path con d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"
-// icono de globo de mensaje
-                                                
-                                                 
-
->>>>>>> dev_peticiones
 
