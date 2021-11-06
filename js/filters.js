@@ -1,35 +1,54 @@
-/* const dateObj = new Date();
-const fechaMili = Date.now();
-console.log(fechaMili.toString()); */
+// Current Week
+const currentWeek = () => {
 
-/* let time = new Date().getTime();
-let date = new Date(time);
-console.log(date.toString()); */
+    currentDate = new Date();
+    let oneJan = new Date(currentDate.getFullYear(), 0, 1);
+    let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 2;
+    return result;
+
+}
 
 
-btnWeek = $('#week');
+btnFilters = $('.btn-filter');
 
-/* console.log(btnWeek); */
+/* Filters Events */
+btnFilters.click(function(event) {
 
-btnWeek.click(function(event) {
+    let filter = event.target.id;
+    console.log(filter);
 
-    console.log('click en week');
-    get("week");
+    switch (filter) {
+        case 'feed':
+            renderPostsWeek(feedFilter(postList));
+            break;
+        case 'latest':
+            renderPostsWeek(latestFilter(postList));
+            break;
+        case 'week':
+            renderPostsWeek(topWeekFilter(weekFilter(postList)));
+            break;
+        case 'month':
+            renderPostsWeek(topMonthFilter(monthFilter(postList)));
+            break;
+        case 'year':
+            renderPostsWeek(topYearFilter(yearFilter(postList)));
+            break;
+        case 'top':
+            console.log('ocultar o mostrar nav izquierdo');
+            break;
+    }
 
 });
 
-
+/* Post Render */
 const renderPostsWeek = (array) => {
 
 
-
-
     // Div contenedor de las cards
-    /* const divBody = $('div .main__body');
+    const divBody = $('div .main_card');
 
-    divBody.empty(); */
-
-    // divBody.lastChild.remove();
+    divBody.empty();
 
     $.each(array, function(index, post) {
 
@@ -180,51 +199,34 @@ const renderPostsWeek = (array) => {
 
 
 
-
-
-
-// Ya existe en el script
-currentWeek = () => {
-
-    currentDate = new Date();
-    let oneJan = new Date(currentDate.getFullYear(), 0, 1);
-    let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
-    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 1;
-    return result;
-
-}
-
-
 /* Week filter */
-
 const weekFilter = (response) => {
 
     let weekArray = [];
     let week = currentWeek();
-    /*  console.log(week); */
 
-    const result = Object.entries(response);
-    result.forEach((element) => {
 
-        /* console.log(element[1].datePublication.week); */
+    console.log(response);
+    response.forEach((element) => {
+
+        console.log(element[1].datePublication.week);
         if (element[1].datePublication.week == week) {
             weekArray.push(element);
         }
 
     });
-    /* console.log(weekArray, 'Filtrado por semana'); */
+
     return weekArray;
 
 }
 
 /* Top week filter */
-
 const topWeekFilter = (arrayWeek) => {
 
-
+    console.log(arrayWeek, 'recibe');
     arrayWeek.sort((a, b) => {
 
-        return a.likes - b.likes;
+        return b[1].likes - a[1].likes;
     })
 
     console.log(arrayWeek);
@@ -238,11 +240,10 @@ const monthFilter = (response) => {
 
     let monthArray = [];
     let month = dateObj.getUTCMonth() + 1;
-    /* console.log(month); */
-    const result = Object.entries(response);
-    result.forEach((element) => {
 
-        /*  console.log(element[1].datePublication.month); */
+    response.forEach((element) => {
+
+
         if (element[1].datePublication.month == month) {
             monthArray.push(element);
         }
@@ -259,24 +260,23 @@ const topMonthFilter = (arrayMonth) => {
 
     arrayMonth.sort((a, b) => {
 
-        return a.likes - b.likes;
+        return b[1].likes - a[1].likes;
     })
 
     console.log(arrayMonth);
-
+    return arrayMonth;
 }
 
-/* Year Filter */
 
+
+/* Year Filter */
 const yearFilter = (response) => {
 
     let yearArray = [];
     let year = dateObj.getUTCFullYear();
-    /* console.log(year); */
-    const result = Object.entries(response);
-    result.forEach((element) => {
 
-        /* console.log(element[1].datePublication.year); */
+    response.forEach((element) => {
+
         if (element[1].datePublication.year == year) {
             yearArray.push(element);
         }
@@ -289,42 +289,41 @@ const yearFilter = (response) => {
 
 
 /* Top year filter */
-
 const topYearFilter = (arrayYear) => {
 
     arrayYear.sort((a, b) => {
 
-        return a.likes - b.likes;
+        return b[1].likes - a[1].likes;
     })
 
     console.log(arrayYear);
+    return arrayYear;
+
+}
+
+
+/* Latest */
+
+
+const latestFilter = (response) => {
+
+    let latestArray = [];
+
+    response.sort((a, b) => {
+
+        return a[1].datePublication.miliseconds - b[1].datePublication.miliseconds;
+    })
+
+    console.log(latestArray);
+    return latestArray;
 
 }
 
 
 
-const get = (filtro) => {
+/* Feed */
 
-    $.ajax({    
-        method: 'GET',
-            url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
-                success: (response) => { 
-            renderPostsWeek(topWeekFilter(weekFilter(response)));
-        },
-            error: (error) => {       console.log(error);     },
-            async: true,
-          
-    });
+const feedFilter = (response) => {
 
+    return response;
 }
-
-
-
-
-
-
-
-
-/* 
-topMonthFilter(monthFilter(response));
-topYearFilter(yearFilter(response)); */
