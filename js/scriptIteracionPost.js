@@ -1,6 +1,6 @@
 const renderPosts = (response) => {
     let posts
-    if (typeof(response).normalize === 'Object') {
+    if (typeof(response) === 'object') {
          posts = Object.entries(response);
     }
     else{
