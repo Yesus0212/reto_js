@@ -3,7 +3,7 @@ const renderPosts = (response) => {
     const posts = Object.entries(response);
 
     // Div contenedor de las cards
-    const divBody = $('div .main__body');
+    const divBody = $('div .main_card');
 
     divBody.empty();
 
