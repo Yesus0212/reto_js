@@ -20,18 +20,18 @@ const renderResult = (response) => {
 };
 
 
-$.ajax({
-    method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
-    data: JSON.stringify({}),
-    success: (response) => {
-        renderResult(response);
-    },
-    error: (error) => {
-        console.log(error);
-    },
-    async: true,
-});
+// $.ajax({
+//     method: 'GET',
+//     url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
+//     data: JSON.stringify({}),
+//     success: (response) => {
+//         renderResult(response);
+//     },
+//     error: (error) => {
+//         console.log(error);
+//     },
+//     async: true,
+// });
 
 const user = {
     userName : "sgoulas",
@@ -96,7 +96,7 @@ function getWeek(currentDate){
 
     let oneJan = new Date(currentDate.getFullYear(), 0, 1);
     let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
-    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 1;
     
     return result;
 
@@ -121,4 +121,11 @@ const savePost = () => {
 
 
 
+const time = new Date(2021, 10, 02, 13, 23, 41, 379);
+console.log(time);
 
+const date = time.getTime();
+console.log(typeof(date));
+console.log(date);
+
+console.log(getWeek(time));

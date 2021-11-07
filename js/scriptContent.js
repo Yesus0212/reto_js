@@ -23,7 +23,7 @@ const renderResPost = (post) => {
         
     // Sección de SCORES DINAMICOS
     $('.numbers#reactions').text(post[5]);
-    $('.numbers#unicorns').text(post[5]);
+    $('.numbers#unicorns').text(post[8]);
     $('.numbers#comments').text(post[0]);
     
     // Dato de imageCover DINAMICO
@@ -42,10 +42,10 @@ const renderResPost = (post) => {
         divTags.append(anchorTag);
     });
 
-    const imgAvatar = post[9];
+    const imgAvatar = post[10];
     $('img.avatar').attr({src:imgAvatar});
     
-    const userName = post[8]
+    const userName = post[9]
     $('#userName').text(userName);
 
     const content = post[1]

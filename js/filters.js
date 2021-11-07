@@ -1,12 +1,56 @@
-let postList;
+// Current Week
+const currentWeek = () => {
 
-const renderPosts = (posts) => {
+    currentDate = new Date();
+    let oneJan = new Date(currentDate.getFullYear(), 0, 1);
+    let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 2;
+    return result;
+
+}
+
+
+btnFilters = $('.btn-filter');
+
+/* Filters Events */
+btnFilters.click(function(event) {
+
+    let filter = event.target.id;
+    console.log(filter);
+
+    switch (filter) {
+        case 'feed':
+            renderPostsWeek(feedFilter(postList));
+            break;
+        case 'latest':
+            renderPostsWeek(latestFilter(postList));
+            break;
+        case 'week':
+            renderPostsWeek(topWeekFilter(weekFilter(postList)));
+            break;
+        case 'month':
+            renderPostsWeek(topMonthFilter(monthFilter(postList)));
+            break;
+        case 'year':
+            renderPostsWeek(topYearFilter(yearFilter(postList)));
+            break;
+        case 'top':
+            console.log('ocultar o mostrar nav izquierdo');
+            break;
+    }
+
+});
+
+/* Post Render */
+const renderPostsWeek = (array) => {
+
 
     // Div contenedor de las cards
     const divBody = $('div .main_card');
+
     divBody.empty();
 
-    $.each(posts, function (index, post) {        
+    $.each(array, function(index, post) {
 
         // Div contenedor de cada card
         const divCard = $('<div class="card rounded-3 mb-2"></div>');
@@ -56,7 +100,7 @@ const renderPosts = (posts) => {
 
         // Div contenedor Titulo
         const divTitlePost = $('<div class="card-title mb-3"></div>');
-        const h2Title = $('<h2 class="title"></h2');
+        const h2Title = $('<h2></h2');
         const anchorTitle = $(`<a href="./pages/post.html?&p=${post[0]}" class="text-dark fw-bolder"></a>`);
 
         // DATO DINAMICO PARA EL TITULO
@@ -75,8 +119,8 @@ const renderPosts = (posts) => {
         tags.forEach(tag => {
             const anchorTag = $(`<a href="#" class="text-black-50 me-3"><span class="text-black-50">#</span>${tag}</a>`);
             divTagsPost.append(anchorTag);
-        });
-        
+        })
+
         // Div contenedor scores
         const divFooterPost = $('<div class="d-flex justify-content-between"></div>');
         const divScoresPost = $('<div class="d-flex align-items-center"></div>')
@@ -96,8 +140,8 @@ const renderPosts = (posts) => {
             anchorReactions.append(svgReactions);
             anchorReactions.append(paragraphReactions);
             anchorReactions.append(spanReactions);
-        };
-                
+        }
+
         const anchorComments = $('<a href="#" class="me-3 "></a>');
         const svgComments = $('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>');
         const paragraphComments = $('<p class="d-inline-block text-dark m-0"></p>');
@@ -153,40 +197,132 @@ const renderPosts = (posts) => {
 };
 
 
-const searchPosts = () => {
-    $.ajax({
-        method: 'GET',
-        url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
-        data: JSON.stringify({}),
-        success: (response) => {
-            postList = Object.entries(response);            
-            renderPosts(postList);
-        },
-        error: (error) => {
-            console.log(error);
-        },
-        async: true,
+
+
+/* Week filter */
+const weekFilter = (response) => {
+
+    let weekArray = [];
+    let week = currentWeek();
+
+
+    console.log(response);
+    response.forEach((element) => {
+
+        console.log(element[1].datePublication.week);
+        if (element[1].datePublication.week == week) {
+            weekArray.push(element);
+        }
+
     });
-};
 
-const deletePost = (index, postId, event) => {
+    return weekArray;
 
-    console.log(event);
+}
 
-    $.ajax({
-        method: 'DELETE',
-        url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${postId}.json`,
-        data: JSON.stringify({}),
-        success: (response) => {
-            console.log(response);
-            index === 0 ? searchPosts() : event.target.offsetParent.remove();
-        },
-        error: (error) => {
-            console.log(error);
-        },
-        async: true,
+/* Top week filter */
+const topWeekFilter = (arrayWeek) => {
+
+    console.log(arrayWeek, 'recibe');
+    arrayWeek.sort((a, b) => {
+
+        return b[1].likes - a[1].likes;
+    })
+
+    console.log(arrayWeek);
+    return arrayWeek;
+
+}
+
+/* Month Filter */
+
+const monthFilter = (response) => {
+
+    let monthArray = [];
+    let month = dateObj.getUTCMonth() + 1;
+
+    response.forEach((element) => {
+
+
+        if (element[1].datePublication.month == month) {
+            monthArray.push(element);
+        }
+
     });
-};
+
+    return monthArray;
+
+}
+
+/* Top month filter */
+
+const topMonthFilter = (arrayMonth) => {
+
+    arrayMonth.sort((a, b) => {
+
+        return b[1].likes - a[1].likes;
+    })
+
+    console.log(arrayMonth);
+    return arrayMonth;
+}
 
 
-searchPosts();
+
+/* Year Filter */
+const yearFilter = (response) => {
+
+    let yearArray = [];
+    let year = dateObj.getUTCFullYear();
+
+    response.forEach((element) => {
+
+        if (element[1].datePublication.year == year) {
+            yearArray.push(element);
+        }
+
+    });
+
+    return yearArray;
+
+}
+
+
+/* Top year filter */
+const topYearFilter = (arrayYear) => {
+
+    arrayYear.sort((a, b) => {
+
+        return b[1].likes - a[1].likes;
+    })
+
+    console.log(arrayYear);
+    return arrayYear;
+
+}
+
+
+/* Latest */
+
+
+const latestFilter = (response) => {
+    let latestArray = [];
+
+    response.sort((a, b) => {
+        console.log(a[1].datePublication.miliseconds - b[1].datePublication.miliseconds);
+        return a[1].datePublication.miliseconds - b[1].datePublication.miliseconds;
+    })
+
+    console.log(latestArray);
+    return latestArray;
+
+}
+
+
+
+/* Feed */
+
+const feedFilter = (response) => {
+
+    return response;
+}
