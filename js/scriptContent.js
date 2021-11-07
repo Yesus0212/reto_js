@@ -54,6 +54,3 @@ const renderResPost = (post) => {
 }    
 
 // 3: "datePublication"
-
-
-

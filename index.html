@@ -29,7 +29,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Dev.to</title>
 </head>
 
@@ -53,8 +53,8 @@
                     </button>
                     <form class="d-flex d-flex_bar">
                         <input class="form-control me-2 form-control_bar" type="search" placeholder="Search..."
-                            aria-label="Search">
-                        <button class="btn btn-outline-success btn-sucess" id="buttonSearchNav" type="button">
+                            aria-label="Search" id = 'navBarSearch'>
+                        <button class="btn btn-outline-success btn-sucess" type="button" id='buttonSearchNav'>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 class="crayons-icon">
                                 <path
@@ -651,7 +651,7 @@
                         <ul class="d-flex ms-3">
                             <li><a href="#" class="li-select fw-bolder me-3 text-dark">Feed</a></li>
                             <li><a href="#" class="me-3 text-dark">Latest</a></li>
-                            <li><a href="#" class="text-dark">Top</a></li>
+                            <li><a href="#" class="text-dark">Latest</a></li>
                         </ul>
                     </nav>
                     
@@ -894,13 +894,14 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+    
 
     <!-- Acceso al archivo js de JQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Acceso al archivo con el muestreo de las peticiones a FireBase-->
     <script src="./js/script_peticiones.js"></script>
     <script src="./js/scriptIteracionPost.js"></script>
-
+    <script src="./js/navBarSearch.js"></script>
 </body>
 
 </html>
