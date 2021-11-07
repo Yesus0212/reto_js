@@ -306,11 +306,10 @@ const topYearFilter = (arrayYear) => {
 
 
 const latestFilter = (response) => {
-
     let latestArray = [];
 
     response.sort((a, b) => {
-
+        console.log(a[1].datePublication.miliseconds - b[1].datePublication.miliseconds);
         return a[1].datePublication.miliseconds - b[1].datePublication.miliseconds;
     })
 
