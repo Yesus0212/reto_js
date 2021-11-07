@@ -2,8 +2,8 @@ let postList
 
 const renderPosts = (response) => {
 
-    const posts = Object.entries(response);
-
+    const posts = typeof(response) === "object"? Object.entries(response):response;
+    
     // Div contenedor de las cards
     const divBody = $('div .main_card');
 
