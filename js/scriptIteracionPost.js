@@ -159,7 +159,7 @@ const searchPosts = () => {
         url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
         data: JSON.stringify({}),
         success: (response) => {
-            postList = Object.entries(response);
+            postList = Object.entries(response);            
             renderPosts(postList);
         },
         error: (error) => {
