@@ -134,5 +134,41 @@ $("#saveButton").click((response) => {
 
 })
 
+const displayTitleAside = () => {
+    let titleAside = $("#titleAside");
+    let tagAside = $("#tagAside");
+    let contentAside = $("#contentAside");
+    titleAside.css("display", "block")
+    tagAside.css("display", "none")
+    contentAside.css("display", "none")
+
+    // console.log("se selecciona titloe")
+}
+
+const displayTagAside = () => {
+    let titleAside = $("#titleAside");
+    let tagAside = $("#tagAside");
+    let contentAside = $("#contentAside")
+    titleAside.css("display", "none")
+    tagAside.css("display", "block")
+    contentAside.css("display", "none")
+    // console.log("se selecciona tag")
+}
+
+const displayContentAside = () => {
+    let titleAside = $("#titleAside");
+    let tagAside = $("#tagAside");
+    let contentAside = $("#contentAside")
+    titleAside.css("display", "none")
+    tagAside.css("display", "none")
+    contentAside.css("display", "block")
+    // console.log("se selecciona content")
+}
+
+$("#tagSelector").click((response) => {
+    console.log("Funcion click en js")
+    displayTagAside();
+})
+
 
 

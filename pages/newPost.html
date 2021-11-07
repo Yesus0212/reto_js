@@ -50,10 +50,10 @@
             <div class="col-g-7 col-md-7 col-s-12 editNewPost">
                 <div class="inputContainer">
                 <div>
-                <input class ="inputNewTitle" type="text" placeholder="New post title here..." id="titlePost" value="">
+                <input class ="inputNewTitle" type="text" placeholder="New post title here..." id="titlePost" value="" onclick="displayTitleAside()">
                 </div>
                 <div>
-                    <select name="select" id="tagSelector" class="inputAddTags">
+                    <select name="select" id="tagSelector" class="inputAddTags" onclick="displayTagAside()">
                         <option value="" class="inputAddTags">Add up to 4 tags...</option>
                     </select>
                 </div>
@@ -63,13 +63,46 @@
                     <input type="text" name="userImg" class="userImg" placeholder="URL image" id="postImg" value="">
                 </div>
                 <div class="formContainer">                
-                    <textarea name="texto" cols="30" rows="20" class="textArea" placeholder="Write your post here..." id="postBody" ></textarea>            
+                    <textarea name="texto" cols="30" rows="16" class="textArea" placeholder="Write your post content here..." id="postBody" onclick="displayContentAside()"></textarea>            
                </div>
 
             </div>
+            <div class="titleAside col-3" id="titleAside" style="display: none;">
+                <p class="titleAsideHeader">
+                    Writing a Great Post Title
+                </p>
+                <p>
+                    Think of your post title as a super short (but compelling!) description — like an overview of the actual post in one short sentence.
+Use keywords where appropriate to help ensure people can find your post by search.
+                </p>
+            </div>
+            <div class="col-3 tagAside" id="tagAside" style="display: none;">
+                <p class="titleAsideHeader">
+                    Tagging Guidelines
+                </p>
+                <p>
+                    
+                    Tags help people find your post.
+                    Think of tags as the topics or categories that best describe your post.
+                    Add up to four comma-separated tags per post. Combine tags to reach the appropriate subcommunities.
+                    Use existing tags whenever possible.
+                    Some tags, such as “help” or “healthydebate”, have special posting guidelines.
+                </p>
+            </div>
+            <div class="col-3 contentAside" id="contentAside" style="display: none;">
+                <p class="titleAsideHeader">
+                    Editor Basics
+                </p>
+                <p>                    
+                    Use Markdown to write and format posts.
+                    Commonly used syntax
+                    You can use Liquid tags to add rich content such as Tweets, YouTube videos, etc.
+                    In addition to images for the post's content, you can also drag and drop a cover image                  
+                </p>
+            </div>
         </div>
     </div>
-
+ 
     <div class="container ">
         <div class="row">
             <div class = "col-g-7 col-md-7 col-s-12 finalbuttons">
