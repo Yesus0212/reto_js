@@ -1,17 +1,56 @@
-let postList
+// Current Week
+const currentWeek = () => {
 
-const renderPosts = (response) => {
+    currentDate = new Date();
+    let oneJan = new Date(currentDate.getFullYear(), 0, 1);
+    let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 2;
+    return result;
 
-    const posts = typeof(response) === "object"? Object.entries(response):response;
-    
+}
+
+
+btnFilters = $('.btn-filter');
+
+/* Filters Events */
+btnFilters.click(function(event) {
+
+    let filter = event.target.id;
+    console.log(filter);
+
+    switch (filter) {
+        case 'feed':
+            renderPostsWeek(feedFilter(postList));
+            break;
+        case 'latest':
+            renderPostsWeek(latestFilter(postList));
+            break;
+        case 'week':
+            renderPostsWeek(topWeekFilter(weekFilter(postList)));
+            break;
+        case 'month':
+            renderPostsWeek(topMonthFilter(monthFilter(postList)));
+            break;
+        case 'year':
+            renderPostsWeek(topYearFilter(yearFilter(postList)));
+            break;
+        case 'top':
+            console.log('ocultar o mostrar nav izquierdo');
+            break;
+    }
+
+});
+
+/* Post Render */
+const renderPostsWeek = (array) => {
+
+
     // Div contenedor de las cards
     const divBody = $('div .main_card');
 
     divBody.empty();
 
-    // divBody.lastChild.remove();
-
-    $.each(posts, function(index, post) {
+    $.each(array, function(index, post) {
 
         // Div contenedor de cada card
         const divCard = $('<div class="card rounded-3 mb-2"></div>');
@@ -158,43 +197,133 @@ const renderPosts = (response) => {
 };
 
 
-const searchPosts = () => {
-    $.ajax({
-        method: 'GET',
-        url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
-        data: JSON.stringify({}),
-        success: (response) => {
 
-            postList = Object.entries(response);
-            /*  console.log(postList); */
-            renderPosts(response);
-            /* renderPosts(response); */
-        },
-        error: (error) => {
-            console.log(error);
-        },
-        async: true,
+
+/* Week filter */
+const weekFilter = (response) => {
+
+    let weekArray = [];
+    let week = currentWeek();
+
+
+    console.log(response);
+    response.forEach((element) => {
+
+        console.log(element[1].datePublication.week);
+        if (element[1].datePublication.week == week) {
+            weekArray.push(element);
+        }
+
     });
-};
 
-const deletePost = (index, postId, event) => {
+    return weekArray;
 
-    console.log(event);
+}
 
-    $.ajax({
-        method: 'DELETE',
-        url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${postId}.json`,
-        data: JSON.stringify({}),
-        success: (response) => {
-            console.log(response);
-            index === 0 ? searchPosts() : event.target.offsetParent.remove();
-        },
-        error: (error) => {
-            console.log(error);
-        },
-        async: true,
+/* Top week filter */
+const topWeekFilter = (arrayWeek) => {
+
+    console.log(arrayWeek, 'recibe');
+    arrayWeek.sort((a, b) => {
+
+        return b[1].likes - a[1].likes;
+    })
+
+    console.log(arrayWeek);
+    return arrayWeek;
+
+}
+
+/* Month Filter */
+
+const monthFilter = (response) => {
+
+    let monthArray = [];
+    let month = dateObj.getUTCMonth() + 1;
+
+    response.forEach((element) => {
+
+
+        if (element[1].datePublication.month == month) {
+            monthArray.push(element);
+        }
+
     });
-};
+
+    return monthArray;
+
+}
+
+/* Top month filter */
+
+const topMonthFilter = (arrayMonth) => {
+
+    arrayMonth.sort((a, b) => {
+
+        return b[1].likes - a[1].likes;
+    })
+
+    console.log(arrayMonth);
+    return arrayMonth;
+}
 
 
-searchPosts();
+
+/* Year Filter */
+const yearFilter = (response) => {
+
+    let yearArray = [];
+    let year = dateObj.getUTCFullYear();
+
+    response.forEach((element) => {
+
+        if (element[1].datePublication.year == year) {
+            yearArray.push(element);
+        }
+
+    });
+
+    return yearArray;
+
+}
+
+
+/* Top year filter */
+const topYearFilter = (arrayYear) => {
+
+    arrayYear.sort((a, b) => {
+
+        return b[1].likes - a[1].likes;
+    })
+
+    console.log(arrayYear);
+    return arrayYear;
+
+}
+
+
+/* Latest */
+
+
+const latestFilter = (response) => {
+
+    let latestArray = [];
+
+    response.sort((a, b) => {
+
+        return a[1].datePublication.miliseconds - b[1].datePublication.miliseconds;
+    })
+
+    console.log(latestArray);
+    return latestArray;
+
+}
+
+
+
+/* Feed */
+
+const feedFilter = (response) => {
+
+    return response;
+}
