@@ -1,13 +1,10 @@
-let postList 
+let postList;
+
 const renderPosts = (posts) => {
 
-    
     // Div contenedor de las cards
     const divBody = $('div .main_card');
-
     divBody.empty();
-
-    // divBody.lastChild.remove();
 
     $.each(posts, function (index, post) {        
 
@@ -59,7 +56,7 @@ const renderPosts = (posts) => {
         
         // Div contenedor Titulo
         const divTitlePost = $('<div class="card-title mb-3"></div>');
-        const h2Title = $('<h2></h2');
+        const h2Title = $('<h2 class="title"></h2');
         const anchorTitle = $(`<a href="./pages/post.html?&p=${post[0]}" class="text-dark fw-bolder"></a>`);
         
         // DATO DINAMICO PARA EL TITULO
@@ -78,7 +75,7 @@ const renderPosts = (posts) => {
         tags.forEach(tag => {
             const anchorTag = $(`<a href="#" class="text-black-50 me-3"><span class="text-black-50">#</span>${tag}</a>`);
             divTagsPost.append(anchorTag);
-        })
+        });
         
         // Div contenedor scores
         const divFooterPost = $('<div class="d-flex justify-content-between"></div>');
@@ -99,7 +96,7 @@ const renderPosts = (posts) => {
             anchorReactions.append(svgReactions);
             anchorReactions.append(paragraphReactions);
             anchorReactions.append(spanReactions);
-        }
+        };
                 
         const anchorComments = $('<a href="#" class="me-3 "></a>');
         const svgComments = $('<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z"></path></svg>');
@@ -162,8 +159,7 @@ const searchPosts = () => {
         url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
         data: JSON.stringify({}),
         success: (response) => {
-            postList = Object.entries(response)
-            
+            postList = Object.entries(response);
             renderPosts(postList);
         },
         error: (error) => {

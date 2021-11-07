@@ -14,3 +14,12 @@ $('img#imgCover').attr({src:imageCover});
 $('h1#title').text("TITULO");
 
 // SIGUEN LOS TAGS
+const divTags = $('div#contTags');
+
+// const tags = Object.values(post[1].tags);
+// tags.forEach(tag => {
+//     const anchorTag = $(`<a href="#" class="text-black-50 me-3"><span class="text-black-50">#</span>${tag}</a>`);
+//     divTags.append(anchorTag);
+// });
+
+$('#userName').text("ramiro");
