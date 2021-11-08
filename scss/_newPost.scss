@@ -59,7 +59,7 @@ body{
   
   .editNewPost{
       background-color: white;
-      margin: 0.2rem 9rem;
+      margin: 0.2rem 0 0.2rem 9rem;
       border: solid gray 0.1px;
       border-radius: 7px;
   }
@@ -81,7 +81,7 @@ body{
 
 .inputNewTitle {
     width: 90%;
-    font-size: 40px;
+    font-size: 45px;
     font-weight: bolder;
     border: none;
 
@@ -112,7 +112,7 @@ body{
     margin-bottom: 35px;
     border: none;
     width: 90%;
-
+    font-size: 20px;
 }
 
 .finalbuttons {
@@ -155,5 +155,23 @@ body{
 
 .saveDraft:hover {
     background: #b4adad;
+}
+
+.titleAsideHeader {
+    font-weight: bold;
+}
+
+.titleAside {
+    margin: 40px 0 0 7px;
+    display: none;
+}
+
+.tagAside {
+    // display: none;
+    margin: 80px 0 0 7px;
+}
+
+.contentAside {
+    margin: 230px 0 0 7px;
 }
 
