@@ -9,6 +9,7 @@ const month = dateObj.getUTCMonth() + 1;
 const day = dateObj.getUTCDate();
 const year = dateObj.getUTCFullYear();
 const week = getWeek(dateObj);
+const mili = dateObj.getTime();
 
 let tagValue ="";
 let tags =[];
@@ -41,13 +42,10 @@ const postResult = (response) => {
 };
 
 function getWeek(currentDate){
-
     let oneJan = new Date(currentDate.getFullYear(), 0, 1);
     let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
-    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
-    
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);    
     return result;
-
 };
 
 
@@ -108,6 +106,7 @@ $("#saveButton").click((response) => {
         coverImage : postImg,
         datePublication : {
             day : day,
+            miliseconds : mili,
             month : month,
             year : year,
             week : week
