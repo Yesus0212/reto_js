@@ -4,14 +4,16 @@ const currentWeek = () => {
     currentDate = new Date();
     let oneJan = new Date(currentDate.getFullYear(), 0, 1);
     let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
-    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 2;
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
     return result;
+    console.log(result, 'semana');
 
 }
 
 
 let btnFilters = $('.btn-filter');
 let rightFilters = $('.right-filter');
+
 
 
 /* Filters Events */
@@ -37,8 +39,7 @@ btnFilters.click(function(event) {
             renderPostsWeek(topYearFilter(yearFilter(postList)));
             break;
         case 'top':
-            /*  $('.right-filter').toggle();
-             console.log(rightFilters); */
+            $('.right-filter').toggleClass('d-flex').toggleClass('dNone');
             console.log('cliick en tooop');
             break;
     }
@@ -208,6 +209,7 @@ const weekFilter = (response) => {
 
     let weekArray = [];
     let week = currentWeek();
+    console.log(week, 'LA semana actual')
 
 
     console.log(response);
