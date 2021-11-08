@@ -402,6 +402,12 @@ body {
   background-color: #f1efef;
 }
 
+.asideL {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
 .LBcontIntro {
   width: 240px;
   padding-top: 10px;
