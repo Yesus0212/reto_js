@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
@@ -29,7 +28,7 @@
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <title>Dev.to</title>
 </head>
 
@@ -46,15 +45,12 @@
                                 style="fill: var(--base-inverted);"></path>
                         </svg>
                     </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <form class="d-flex d-flex_bar">
-                        <input class="form-control me-2 form-control_bar" type="search" placeholder="Search..."
-                            aria-label="Search">
-                        <button class="btn btn-outline-success btn-sucess" type="submit">
+                        <input class="form-control me-2 form-control_bar" type="search" placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-outline-success btn-sucess" id="buttonSearchNav" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 class="crayons-icon">
                                 <path
@@ -66,13 +62,11 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav mb-2 mb-lg-0 navbar-nav_bar">
                             <li class="nav-item">
-                                <a class="nav-link active create_post" aria-current="page" href="#">Create Post</a>
+                                <a class="nav-link active create_post" aria-current="page" href="./pages/newPost.html">Create Post</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link active action" aria-current="page" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        role="img" aria-labelledby="a41cvmxi3r1lero45hkubzuujy4jlv0j"
-                                        class="crayons-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="a41cvmxi3r1lero45hkubzuujy4jlv0j" class="crayons-icon">
                                         <title id="a41cvmxi3r1lero45hkubzuujy4jlv0j">Connect</title>
                                         <path
                                             d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10H2l2.929-2.929A9.969 9.969 0 012 12zm4.828 8H12a8 8 0 10-8-8c0 2.152.851 4.165 2.343 5.657l1.414 1.414-.929.929zM8 13h8a4 4 0 11-8 0z">
@@ -82,9 +76,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link action" href="./pages/notification.html">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        role="img" aria-labelledby="a6d4t764l2b3c64midpz699jmmh662u0"
-                                        class="crayons-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="a6d4t764l2b3c64midpz699jmmh662u0" class="crayons-icon">
                                         <title id="a6d4t764l2b3c64midpz699jmmh662u0">Notifications</title>
                                         <path
                                             d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z">
@@ -94,8 +86,7 @@
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
+                                <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <span class="avatar_bar">
                                         <img class="avatar_image" alt="" id="nav-profile-image" src="/img/avatar.png">
                                     </span>
@@ -107,7 +98,7 @@
                                         <hr class="dropdown-divider">
                                     </li>
                                     <li><a class="dropdown-item" href="#">Dashboard</a></li>
-                                    <li><a class="dropdown-item" href="#">Create Post</a></li>
+                                    <li><a class="dropdown-item" href="./pages/newPost.html">Create Post</a></li>
                                     <li><a class="dropdown-item" href="#">Reading list</a></li>
                                     <li><a class="dropdown-item" href="#">Settings</a></li>
                                     <hr class="dropdown-divider">
@@ -130,8 +121,7 @@
                             <div class="banner_top">
                                 <div class="campaign_banner">
                                     <h4>Join us at</h4>
-                                    <img height="193" width="420" class="campaignmode-hackathon--mainimage"
-                                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--5x6JJFTC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_420/https://jess.forem.lol/images/2kqlhLiqBBFHkqLwx86vrfjlg-PDWbCl47PIBeUDO3E/w:420/mb:500000/aHR0cHM6Ly9qZXNz/LmZvcmVtLmxvbC9y/ZW1vdGVpbWFnZXMv/dXBsb2Fkcy9hcnRp/Y2xlcy9wemJ1bzZv/eDE3NHZjZmg5YTFv/ci5wbmc">
+                                    <img height="193" width="420" class="campaignmode-hackathon--mainimage" src="https://res.cloudinary.com/practicaldev/image/fetch/s--5x6JJFTC--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_420/https://jess.forem.lol/images/2kqlhLiqBBFHkqLwx86vrfjlg-PDWbCl47PIBeUDO3E/w:420/mb:500000/aHR0cHM6Ly9qZXNz/LmZvcmVtLmxvbC9y/ZW1vdGVpbWFnZXMv/dXBsb2Fkcy9hcnRp/Y2xlcy9wemJ1bzZv/eDE3NHZjZmg5YTFv/ci5wbmc">
                                     <h2>The community-first coding conference designed to level you up! Sep 23-24 🌈
                                     </h2>
                                     <a href="https://ti.to/codenewbie/codeland-2021">
@@ -165,8 +155,7 @@
                         <ul class="nav nav-pills flex-column">
                             <li class="nav-item">
                                 <div class="nav-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        aria-hidden="true" class="crayons-icon crayons-icon--default" id="LBicon1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" aria-hidden="true" class="crayons-icon crayons-icon--default" id="LBicon1">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#A0041E"
                                                 d="M13.344 18.702h-2a.5.5 0 01-.5-.5v-7a.5.5 0 01.5-.5h2a.5.5 0 01.5.5v7a.5.5 0 01-.5.5z">
@@ -192,8 +181,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="./pages/notification.html">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        aria-hidden="true" class="crayons-icon crayons-icon--default" id="LBicon2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" aria-hidden="true" class="crayons-icon crayons-icon--default" id="LBicon2">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#EF9645"
                                                 d="M21 22s-6.031 5.274-7.74 6.832c-1.323 1.203.88 3.498 2.135 2.452 3.333-2.785 6.493-4.85 6.493-4.85l.367.526c-1.309.79-4.693 2.858-6.449 4.438-1.324 1.19.767 3.553 2.093 2.365 1.822-1.634 5.995-4.565 5.995-4.565l.368.384c-1.08.679-2.772 1.94-4.985 3.958-1.332 1.215.619 2.485 1.764 1.534 3.116-2.586 3.232-4.383 6.661-5.85C32.935 26.986 21 22 21 22z">
@@ -217,8 +205,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        aria-hidden="true" class="crayons-icon crayons-icon--default" id="LBicon3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" aria-hidden="true" class="crayons-icon crayons-icon--default" id="LBicon3">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#EF9645"
                                                 d="M21 22s-6.031 5.274-7.74 6.832c-1.323 1.203.88 3.498 2.135 2.452 3.333-2.785 6.493-4.85 6.493-4.85l.367.526c-1.309.79-4.693 2.858-6.449 4.438-1.324 1.19.767 3.553 2.093 2.365 1.822-1.634 5.995-4.565 5.995-4.565l.368.384c-1.08.679-2.772 1.94-4.985 3.958-1.332 1.215.619 2.485 1.764 1.534 3.116-2.586 3.232-4.383 6.661-5.85C32.935 26.986 21 22 21 22z">
@@ -243,8 +230,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon4">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#292F33"
                                                 d="M10 19h24v2H10zm15 15c0 2.208-.792 4-3 4-2.209 0-3-1.792-3-4s.791-2 3-2c2.208 0 3-.208 3 2z">
@@ -279,8 +265,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon5">
                                         <g transform="translate(4 4)">
                                             <path fill="#31373D"
                                                 d="M34.074 18l-4.832 3H28v-4c0-.088-.02-.169-.026-.256C31.436 15.864 34 12.735 34 9a8 8 0 00-16.001 0c0 1.463.412 2.822 1.099 4H14.92c.047-.328.08-.66.08-1a7 7 0 10-14 0 6.995 6.995 0 004 6.317V29a4 4 0 004 4h15a4 4 0 004-4v-3h1.242l4.832 3H35V18h-.926zM28.727 3.977a5.713 5.713 0 012.984 4.961L28.18 8.35a2.276 2.276 0 00-.583-.982l1.13-3.391zm-.9 6.342l3.552.592a5.713 5.713 0 01-4.214 3.669 3.985 3.985 0 00-1.392-1.148l.625-2.19a2.425 2.425 0 001.429-.923zM26 3.285c.282 0 .557.027.828.067l-1.131 3.392c-.404.054-.772.21-1.081.446L21.42 5.592A5.703 5.703 0 0126 3.285zM20.285 9c0-.563.085-1.106.236-1.62l3.194 1.597-.002.023c0 .657.313 1.245.771 1.662L23.816 13h-1.871a5.665 5.665 0 01-1.66-4zm-9.088-.385A4.64 4.64 0 0112.667 12c0 .344-.043.677-.113 1H10.1c.145-.304.233-.641.233-1a2.32 2.32 0 00-.392-1.292l1.256-2.093zM8 7.333c.519 0 1.01.105 1.476.261L8.22 9.688c-.073-.007-.145-.022-.22-.022a2.32 2.32 0 00-1.292.392L4.615 8.803A4.64 4.64 0 018 7.333zM3.333 12c0-.519.105-1.01.261-1.477l2.095 1.257c-.007.073-.022.144-.022.22 0 .75.36 1.41.91 1.837a3.987 3.987 0 00-1.353 1.895C4.083 14.881 3.333 13.533 3.333 12z">
@@ -298,8 +283,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon6">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon6">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#FFD983"
                                                 d="M36.017 24.181L21.345 9.746C20.687 9.087 19.823 9 18.96 9H8.883C7.029 9 6 10.029 6 11.883v10.082c0 .861.089 1.723.746 2.38L21.3 39.017a3.287 3.287 0 004.688 0l10.059-10.088c1.31-1.312 1.28-3.438-.03-4.748zm-23.596-8.76a1.497 1.497 0 11-2.118-2.117 1.497 1.497 0 012.118 2.117z">
@@ -318,8 +302,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon7">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon7">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#FFD983"
                                                 d="M33 15.06c0 6.439-5 7.439-5 13.44 0 3.098-3.123 3.359-5.5 3.359-2.053 0-6.586-.779-6.586-3.361C15.914 22.5 11 21.5 11 15.06c0-6.031 5.285-10.92 11.083-10.92C27.883 4.14 33 9.029 33 15.06z">
@@ -343,8 +326,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon8">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon8">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#F4900C"
                                                 d="M15 4a8 8 0 00-8 8v8h2v-8a6 6 0 0112 0v8h2v-8a8 8 0 00-8-8z"></path>
@@ -362,8 +344,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon9">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon9">
                                         <path fill="#DD2E44"
                                             d="M39.885 15.833c0-5.45-4.418-9.868-9.867-9.868-3.308 0-6.227 1.633-8.018 4.129-1.791-2.496-4.71-4.129-8.017-4.129-5.45 0-9.868 4.417-9.868 9.868 0 .772.098 1.52.266 2.241C5.751 26.587 15.216 35.568 22 38.034c6.783-2.466 16.249-11.447 17.617-19.959.17-.721.268-1.469.268-2.242z">
                                         </path>
@@ -374,8 +355,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg viewBox="0 0 235 234" xmlns="http://www.w3.org/2000/svg" class="rainbow-logo"
-                                        width="24" height="24" preserveAspectRatio="xMinYMin meet" id="LBicon10">
+                                    <svg viewBox="0 0 235 234" xmlns="http://www.w3.org/2000/svg" class="rainbow-logo" width="24" height="24" preserveAspectRatio="xMinYMin meet" id="LBicon10">
                                         <g fill="none" fill-rule="evenodd">
                                             <path fill="#88AEDC" d="M234.04 175.67l-75.69 58.28h47.18L234.04 212z">
                                             </path>
@@ -414,8 +394,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBicon11">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBicon11">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#FFAC33"
                                                 d="M38.724 33.656c-1.239-.01-1.241 1.205-1.241 1.205H22.5c-5.246 0-9.5-4.254-9.5-9.5s4.254-9.5 9.5-9.5 9.5 4.254 9.5 9.5c0 3.062-1.6 5.897-3.852 7.633h5.434C35.022 30.849 36 28.139 36 25.361c0-7.456-6.045-13.5-13.5-13.5-7.456 0-13.5 6.044-13.5 13.5 0 7.455 6.044 13.5 13.5 13.5h14.982s-.003 1.127 1.241 1.139c1.238.012 1.228-1.245 1.228-1.245l.014-3.821s.001-1.267-1.241-1.278zM9 18.26a16.047 16.047 0 014-4.739V13c0-5 5-7 5-8s-1-1-1-1H5C4 4 4 5 4 5c0 1 5 3.333 5 7.69v5.57z">
@@ -442,8 +421,7 @@
                         <ul class="nav nav-pills flex-column">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBOIcon1">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBOIcon1">
                                         <g class="nc-icon-wrapper">
                                             <path fill="#FFDB5E"
                                                 d="M38.956 21.916c0-.503-.12-.975-.321-1.404-1.341-4.326-7.619-4.01-16.549-4.221-1.493-.035-.639-1.798-.115-5.668.341-2.517-1.282-6.382-4.01-6.382-4.498 0-.171 3.548-4.148 12.322-2.125 4.688-6.875 2.062-6.875 6.771v10.719c0 1.833.18 3.595 2.758 3.885 2.499.281 1.937 2.062 5.542 2.062h18.044a3.337 3.337 0 003.333-3.334c0-.762-.267-1.456-.698-2.018 1.02-.571 1.72-1.649 1.72-2.899 0-.76-.266-1.454-.696-2.015 1.023-.57 1.725-1.649 1.725-2.901 0-.909-.368-1.733-.961-2.336a3.311 3.311 0 001.251-2.581z">
@@ -459,8 +437,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24"
-                                        id="LBOicon2">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="24" height="24" id="LBOicon2">
                                         <g transform="translate(4 4)">
                                             <circle fill="#FFCC4D" cx="18" cy="18" r="18"></circle>
                                             <path fill="#664500"
@@ -517,9 +494,7 @@
                     <div class="LBcontRedS">
                         <div class="btn-group" role="group" aria-label="Basic example">
                             <div class="btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" color: "#efefef;" width="24" height="24"
-                                    viewBox="0 0 24 24" role="img" aria-labelledby="ai4pdf64bypf8q80ywn553hvgqbrl1jp"
-                                    id="LBiconRS1" class="crayons-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" color="#efefef;" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="ai4pdf64bypf8q80ywn553hvgqbrl1jp" id="LBiconRS1" class="crayons-icon">
                                     <title>Twitter</title>
                                     <path
                                         d="M22.162 5.656a8.383 8.383 0 01-2.402.658A4.196 4.196 0 0021.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 00-7.126 3.814 11.874 11.874 0 01-8.62-4.37 4.168 4.168 0 00-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 01-1.894-.523v.052a4.185 4.185 0 003.355 4.101 4.211 4.211 0 01-1.89.072A4.185 4.185 0 007.97 16.65a8.395 8.395 0 01-6.191 1.732 11.83 11.83 0 006.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.495 8.495 0 002.087-2.165l-.001-.001z"
@@ -527,9 +502,7 @@
                                 </svg>
                             </div>
                             <div class="btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    role="img" aria-labelledby="amdtg958ehcf4servl7s3trcpskvnoki" class="crayons-icon"
-                                    id="LBiconRS2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="amdtg958ehcf4servl7s3trcpskvnoki" class="crayons-icon" id="LBiconRS2">
                                     <title>Facebook</title>
                                     <path
                                         d="M15.402 21v-6.966h2.333l.349-2.708h-2.682V9.598c0-.784.218-1.319 1.342-1.319h1.434V5.857a19.188 19.188 0 00-2.09-.107c-2.067 0-3.482 1.262-3.482 3.58v1.996h-2.338v2.708h2.338V21H4a1 1 0 01-1-1V4a1 1 0 011-1h16a1 1 0 011 1v16a1 1 0 01-1 1h-4.598z">
@@ -537,9 +510,7 @@
                                 </svg>
                             </div>
                             <div class="btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    role="img" aria-labelledby="abf06n84py7jjo9xf3s959qj9bv1w4l0" class="crayons-icon"
-                                    id="LBiconRS3">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="abf06n84py7jjo9xf3s959qj9bv1w4l0" class="crayons-icon" id="LBiconRS3">
                                     <title>Github</title>
                                     <path
                                         d="M12 2C6.475 2 2 6.475 2 12a9.994 9.994 0 006.838 9.488c.5.087.687-.213.687-.476 0-.237-.013-1.024-.013-1.862-2.512.463-3.162-.612-3.362-1.175-.113-.288-.6-1.175-1.025-1.413-.35-.187-.85-.65-.013-.662.788-.013 1.35.725 1.538 1.025.9 1.512 2.338 1.087 2.912.825.088-.65.35-1.087.638-1.337-2.225-.25-4.55-1.113-4.55-4.938 0-1.088.387-1.987 1.025-2.688-.1-.25-.45-1.275.1-2.65 0 0 .837-.262 2.75 1.026a9.28 9.28 0 012.5-.338c.85 0 1.7.112 2.5.337 1.912-1.3 2.75-1.024 2.75-1.024.55 1.375.2 2.4.1 2.65.637.7 1.025 1.587 1.025 2.687 0 3.838-2.337 4.688-4.562 4.938.362.312.675.912.675 1.85 0 1.337-.013 2.412-.013 2.75 0 .262.188.574.688.474A10.016 10.016 0 0022 12c0-5.525-4.475-10-10-10z">
@@ -547,9 +518,7 @@
                                 </svg>
                             </div>
                             <div class="btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    role="img" aria-labelledby="a840zosj3uvz7e41xbf70nom69z3k0ox" class="crayons-icon"
-                                    id="LBiconRS4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="a840zosj3uvz7e41xbf70nom69z3k0ox" class="crayons-icon" id="LBiconRS4">
                                     <title>Instagram</title>
                                     <path
                                         d="M12 2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153.509.5.902 1.105 1.153 1.772.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 01-1.153 1.772c-.5.508-1.105.902-1.772 1.153-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 01-1.772-1.153 4.904 4.904 0 01-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 011.153-1.772A4.897 4.897 0 015.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2zm0 5a5 5 0 100 10 5 5 0 000-10zm6.5-.25a1.25 1.25 0 10-2.5 0 1.25 1.25 0 002.5 0zM12 9a3 3 0 110 6 3 3 0 010-6z">
@@ -557,9 +526,7 @@
                                 </svg>
                             </div>
                             <div class="btn">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    role="img" aria-labelledby="aku177oz4ckizrnc4xhuqlxpugrj8y27" class="crayons-icon"
-                                    id="LBiconRS5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img" aria-labelledby="aku177oz4ckizrnc4xhuqlxpugrj8y27" class="crayons-icon" id="LBiconRS5">
                                     <title>Twitch</title>
                                     <path
                                         d="M4.3 3H21v11.7l-4.7 4.7h-3.9l-2.5 2.4H7v-2.4H3V6.2L4.3 3zM5 17.4h4v2.4h.095l2.5-2.4h3.877L19 13.872V5H5v12.4zM15 8h2v4.7h-2V8zm0 0h2v4.7h-2V8zm-5 0h2v4.7h-2V8z">
@@ -576,11 +543,8 @@
                             <div class="LBheadTags">
                                 My Tags
                             </div>
-                            <a id="tag-priority-link" href="/dashboard/following_tags"
-                                class="crayons-btn crayons-btn--icon crayons-btn--ghost-dimmed"
-                                aria-label="Customize tag priority" title="Customize tag priority">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    class="crayons-icon">
+                            <a id="tag-priority-link" href="/dashboard/following_tags" class="crayons-btn crayons-btn--icon crayons-btn--ghost-dimmed" aria-label="Customize tag priority" title="Customize tag priority">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="crayons-icon">
                                     <path
                                         d="M12 1l9.5 5.5v11L12 23l-9.5-5.5v-11L12 1zm0 2.311L4.5 7.653v8.694l7.5 4.342 7.5-4.342V7.653L12 3.311zM12 16a4 4 0 110-8 4 4 0 010 8zm0-2a2 2 0 100-4 2 2 0 000 4z">
                                     </path>
@@ -639,308 +603,44 @@
 
                     <!--6-Publicity-->
                     <div class="LBcontPub">
-                        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Th3frs95--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://thepracticaldev.s3.amazonaws.com/i/a7tz6hpmtwmgx2pe2ch2.jpg"
-                            style="margin-top:15px;" loading="lazy">
+                        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--Th3frs95--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://thepracticaldev.s3.amazonaws.com/i/a7tz6hpmtwmgx2pe2ch2.jpg" style="margin-top:15px;" loading="lazy">
                         <h4 class="LBpub">DEV Up Your Style</h4>
                     </div>
 
                 </div>
-                <!-- Main body -->
+                <!-- Main body fw-bolder-->
                 <div class="col-lg-6 col-md-6 col-sm-10 main__body">
-                    <nav>
-                        <ul class="d-flex ms-3">
-                            <li><a href="#" class="li-select fw-bolder me-3 text-dark">Feed</a></li>
-                            <li><a href="#" class="me-3 text-dark">Latest</a></li>
-                            <li><a href="#" class="text-dark">Latest</a></li>
+                    <nav class="filter-post">
+                        <ul class="d-flex ms-3 left-filter">
+                            <li><a href="#" class=" btn-filter li-select  me-3 text-dark feed" id="feed">Feed</a></li>
+                            <li><a href="#" class=" btn-filter me-3 text-dark li-select text-dark latest " id="latest">Latest</a></li>
+                            <li><a href="#" class=" btn-filter text-dark top" id="top">Top</a></li>
+                        </ul>
+
+                        <ul class="d-flex ms-3 top-filter right-filter" id="top-filter">
+                            <li><a href="#" class=" btn-filter li-select  me-3 text-dark week" id="week">Week</a></li>
+                            <li><a href="#" class=" btn-filter me-3 text-dark month" id="month">Month</a></li>
+                            <li><a href="#" class=" btn-filter text-dark year" id="year">Year</a></li>
                         </ul>
                     </nav>
-                    <div class="card rounded-3 mb-2">
-                        <img src="https://res.cloudinary.com/practicaldev/image/fetch/s--0Lx4Bcnv--/c_imagga_scale,f_auto,fl_progressive,h_420,q_auto,w_1000/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/wlk4c0iq9xqfg0xgmzoy.png"
-                            alt="" class="img-fluid">
 
-                        <article class="card-body">
-                            <div class="d-flex">
-                                <div>
-                                    <a href="" class="row p-0 m-0 w-75">
-                                        <img class="rounded-circle p-0"
-                                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--9vzdT4Ts--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/243850/50980395-72a9-45f6-ae80-ed8aa49b87d6.jpeg"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="row pe-0 mb-3 lh-sm" style="margin-left:-10px;">
-                                    <a href="#" class="text-dark">Nitin Ranganath</a>
-                                    <a href="#" class="text-black-50"><time datetime="PT2H30M">2h 30m</time></a>
-                                </div>
-                            </div>
-                            <div class="ms-5">
-                                <div class="card-title mb-3">
-                                    <h2><a href="./pages/post.html" class="text-dark fw-bolder">I built a social
-                                            network for
-                                            developers to showcase
-                                            their
-                                            projects</a></h2>
-                                </div>
-                                <div class="mb-3 text-black-50">
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>showdev</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>nextjs</a>
-                                    <a href="#" class="text-black-50 me-3"><span class="text-black-50">#</span>react</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>javascript</a>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center ">
-                                        <a href="#" class="me-3 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark m-0">1031</p>
-                                            <span class="text-dark"> reactions</span>
-                                        </a>
-                                        <a href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark  m-0">24</p>
-                                            <span class="text-dark">Comment</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <small class="me-1">6 min read</small>
-                                        <button class="btn btn-light">
-                                            Save
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="card rounded-3 mb-2">
-                        <article class="card-body">
-                            <div class="d-flex">
-                                <div>
-                                    <a href="" class="row p-0 m-0 w-50">
-                                        <img class="rounded-circle p-0"
-                                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--zeb-pX_z--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/83733/2ad23e28-f3c2-46b0-a7f2-e3374104878c.jpeg"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="row pe-0 mb-3 lh-sm" style="margin-left:-50px;">
-                                    <a href="#" class="text-dark">andreykh1985</a>
-                                    <a href="#" class="text-black-50"><time datetime="PT2H30M">Sep 22</time></a>
-                                </div>
-                            </div>
-                            <div class="ms-5">
-                                <div class="card-title mb-3">
-                                    <h2><a href="#" class="text-dark fw-bolder">Creating a JS Connector Map to
-                                            Visualize Tour de France
-                                            2021 Route</a></h2>
-                                </div>
-                                <div class="mb-3 text-black-50">
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>webdev</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>django</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>template</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>appseed</a>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center ">
-                                        <a href="#" class="me-3 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark m-0">26</p>
-                                            <span class="text-dark"> reactions</span>
-                                        </a>
-                                        <a href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark  m-0">Add</p>
-                                            <span class="text-dark">Comment</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <small class="me-2">4 min read</small>
-                                        <button class="btn btn-light">
-                                            Save
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <section class="authentication__card">
-                        <article class="authentication__body">
-                            <div class="feed__container">
-                                <figure class="feed__image-container">
-                                    <img class="feed__image"
-                                        src="https://res.cloudinary.com/practicaldev/image/fetch/s--pcSkTMZL--/c_limit,f_auto,fl_progressive,q_80,w_190/https://practicaldev-herokuapp-com.freetls.fastly.net/assets/devlogo-pwa-512.png"
-                                        alt="">
-                                </figure>
-                                <div class="feed__title">
-                                    <h2><a href="">DEV Community</a> is a community of 696,623 amazing developers
-                                    </h2>
-                                    <p>We're a place where coders share, stay up-to-date and grow their careers.</p>
-                                </div>
-                            </div>
-                            <div class="feed__actions">
-                                <a href="#" class="btn btn-blue">Create new account</a>
-                                <a href="#" class="btn btn-transparent">Log in</a>
-                            </div>
-                        </article>
-                    </section>
-                    <div class="card rounded-3 mb-2">
-                        <article class="card-body">
-                            <div class="d-flex">
-                                <div>
-                                    <a href="" class="row p-0 m-0 w-50">
-                                        <img class="rounded-circle p-0"
-                                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--Qv9nP2Ud--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/592016/ac52b742-ede9-4335-9692-80b246d53ce7.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="row pe-0 mb-3 lh-sm" style="margin-left:-50px;">
-                                    <a href="#" class="text-dark">Maria Simon</a>
-                                    <a href="#" class="text-black-50"><time datetime="PT2H30M">Sep 21</time></a>
-                                </div>
-                            </div>
-                            <div class="ms-5">
-                                <div class="card-title mb-3">
-                                    <h2><a href="#" class="text-dark fw-bolder">Watch me build a product and launch
-                                            in 30 days with just
-                                            HTML and CSS</a></h2>
-                                </div>
-                                <div class="mb-3 text-black-50">
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>webdev</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>django</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>template</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>appseed</a>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center ">
-                                        <a href="#" class="me-3 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark m-0">45</p>
-                                            <span class="text-dark"> reactions</span>
-                                        </a>
-                                        <a href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark  m-0">12</p>
-                                            <span class="text-dark">Comment</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <small class="me-2">3 min read</small>
-                                        <button class="btn btn-light">
-                                            Save
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="card rounded-3 mb-2">
-                        <article class="card-body">
-                            <div class="d-flex">
-                                <div>
-                                    <a href="" class="row p-0 m-0 w-50">
-                                        <img class="rounded-circle p-0"
-                                            src="https://res.cloudinary.com/practicaldev/image/fetch/s--EcY-Q_E_--/c_fill,f_auto,fl_progressive,h_90,q_auto,w_90/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/206222/84f8c787-328a-4599-bfab-38dceb2fe038.png"
-                                            alt="">
-                                    </a>
-                                </div>
-                                <div class="row pe-0 mb-3 lh-sm" style="margin-left:-50px;">
-                                    <a href="#" class="text-dark">o1lab</a>
-                                    <a href="#" class="text-black-50"><time datetime="PT2H30M">Sep 22</time></a>
-                                </div>
-                            </div>
-                            <div class="ms-5">
-                                <div class="card-title mb-3">
-                                    <h2><a href="#" class="text-dark fw-bolder">How my open source project got angel
-                                            investment from a
-                                            user
-                                            itself!</a></h2>
-                                </div>
-                                <div class="mb-3 text-black-50">
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>webdev</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>django</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>template</a>
-                                    <a href="#" class="text-black-50 me-3"><span
-                                            class="text-black-50">#</span>appseed</a>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <div class="d-flex align-items-center ">
-                                        <a href="#" class="me-3 ">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark m-0">34</p>
-                                            <span class="text-dark"> reactions</span>
-                                        </a>
-                                        <a href="#">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-                                                <path
-                                                    d="M10.5 5h3a6 6 0 110 12v2.625c-3.75-1.5-9-3.75-9-8.625a6 6 0 016-6zM12 15.5h1.5a4.501 4.501 0 001.722-8.657A4.5 4.5 0 0013.5 6.5h-3A4.5 4.5 0 006 11c0 2.707 1.846 4.475 6 6.36V15.5z">
-                                                </path>
-                                            </svg>
-                                            <p class="d-inline-block text-dark  m-0">23</p>
-                                            <span class="text-dark">Comment</span>
-                                        </a>
-                                    </div>
-                                    <div>
-                                        <small class="me-2">6 min read</small>
-                                        <button class="btn btn-light">
-                                            Save
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
+
+
+                    <div class="col-lg-12 col-md-6 col-sm-10 main_card">
+                        <!-- Sección de CARDs -->
                     </div>
 
                 </div>
+
                 <div class="col-3" id="asideR">
                     <div class="row">
                         <div class="col-12">
                             <div class="row">
                                 <div class="p-3 card_g_ar">
                                     <p>
-                                        <a
-                                            href="https://dev.to/devteam/listen-to-s6e6-of-devdiscuss-vs-code-and-the-extended-vs-code-universe-with-jonathan-carter-cassidy-williams-487f">
-                                            <img class="image_ar"
-                                                src="https://res.cloudinary.com/practicaldev/image/fetch/s--EDoP9zp7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://res.cloudinary.com/practicaldev/image/fetch/s--otY2jCJh--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_420/https://dev-to-uploads.s3.amazonaws.com/uploads/podcast/image/235/08786d8b-7ef4-4c00-bc40-f4b3cbca5834.jpg"
-                                                style="float:left;width:115px;margin-right:15px;"
-                                                alt="The logo for the DevDiscuss podcast." loading="lazy">
+                                        <a href="https://dev.to/devteam/listen-to-s6e6-of-devdiscuss-vs-code-and-the-extended-vs-code-universe-with-jonathan-carter-cassidy-williams-487f">
+                                            <img class="image_ar" src="https://res.cloudinary.com/practicaldev/image/fetch/s--EDoP9zp7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_350/https://res.cloudinary.com/practicaldev/image/fetch/s--otY2jCJh--/c_fill%2Cf_auto%2Cfl_progressive%2Ch_420%2Cq_auto%2Cw_420/https://dev-to-uploads.s3.amazonaws.com/uploads/podcast/image/235/08786d8b-7ef4-4c00-bc40-f4b3cbca5834.jpg"
+                                                style="float:left;width:115px;margin-right:15px;" alt="The logo for the DevDiscuss podcast." loading="lazy">
                                         </a>
                                     </p>
                                     <h4>
@@ -965,23 +665,19 @@
                                         </div>
                                     </header>
                                     <div>
-                                        <a class="card_link_ar"
-                                            href="/listings/jobs/ruby-on-rails-developer-full-time-remote-49em">
+                                        <a class="card_link_ar" href="/listings/jobs/ruby-on-rails-developer-full-time-remote-49em">
                                             <div class="primer_ar">Ruby on Rails Developer – Full-Time, Remote</div>
                                             <div class="card_link_secon_ar">jobs</div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/listings/collabs/choose-build-get-rewarded-1-3m-funding-268n">
+                                        <a class="card_link_ar" href="/listings/collabs/choose-build-get-rewarded-1-3m-funding-268n">
                                             <div class="primer_ar">Choose. Build. Get rewarded. $1.3M+ funding.</div>
                                             <div class="card_link_secon_ar">collabs</div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/listings/events/free-live-devops-careers-q-a-session-4bea">
+                                        <a class="card_link_ar" href="/listings/events/free-live-devops-careers-q-a-session-4bea">
                                             <div>Free Live DevOps Careers Q&amp;A session</div>
                                             <div class="card_link_secon_ar">events</div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/listings/events/the-future-of-html-controls-free-session-sep-23-1pm-et-gmt-4-902">
+                                        <a class="card_link_ar" href="/listings/events/the-future-of-html-controls-free-session-sep-23-1pm-et-gmt-4-902">
                                             <div class="primer_ar">The Future of HTML Controls - Free Session - Sep 23, 1pm ET (GMT -4)
                                             </div>
                                             <div class="card_link_secon_ar">events</div>
@@ -1002,8 +698,7 @@
                                         </h3>
                                     </header>
                                     <div>
-                                        <a class="card_link_ar"
-                                            href="/o1lab/how-my-open-source-project-got-angel-investment-from-its-user-12dp">
+                                        <a class="card_link_ar" href="/o1lab/how-my-open-source-project-got-angel-investment-from-its-user-12dp">
                                             How my open source project got angel investment from a user itself!
                                             <div class="card_link_secon_ar">
                                                 1 comment
@@ -1017,8 +712,7 @@
                                                 </span>
                                             </div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/ats1999/save-your-application-from-crashing-by-wrong-use-of-web-storage-api-or-localstorage-in-browser-i53">
+                                        <a class="card_link_ar" href="/ats1999/save-your-application-from-crashing-by-wrong-use-of-web-storage-api-or-localstorage-in-browser-i53">
                                             Save your application from crashing by wrong use of Web Storage API or
                                             localStorage in browser
                                             <div class="card_link_secon_ar">
@@ -1041,22 +735,19 @@
                                                 <span class="indicator-ar">New</span>
                                             </div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/hurdacitelefonu/i-stanbul-da-hurdacilik-hizmeti-veriyoruz-36dl">
+                                        <a class="card_link_ar" href="/hurdacitelefonu/i-stanbul-da-hurdacilik-hizmeti-veriyoruz-36dl">
                                             My first website...
                                             <div class="card_link_secon_ar">
                                                 <span class="indicator-ar">New</span>
                                             </div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/mrdulin/when-i-create-a-post-how-to-automatically-complete-the-tag-metadata-gn1">
+                                        <a class="card_link_ar" href="/mrdulin/when-i-create-a-post-how-to-automatically-complete-the-tag-metadata-gn1">
                                             When I create a post, how to automatically complete the tag metadata?
                                             <div class="card_link_secon_ar">
                                                 1 comment
                                             </div>
                                         </a>
-                                        <a class="card_link_ar"
-                                            href="/yobretyo/esp-eye-what-package-library-do-i-use-3pgb">
+                                        <a class="card_link_ar" href="/yobretyo/esp-eye-what-package-library-do-i-use-3pgb">
                                             Esp-eye, what package / library do I use?
                                             <div class="card_link_secon_ar">
                                                 <span class="indicator-ar">New</span>
@@ -1084,37 +775,27 @@
                     <p class="footer-description">
                         <a href="#" class="link-footer">
                             DEV Community
-                        </a>
-                        – A constructive and inclusive social network for
-                        software developers. With you every step of your
-                        journey.
+                        </a> – A constructive and inclusive social network for software developers. With you every step of your journey.
                     </p>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-8 col-sm-11">
                         <p id="p_footer">
                             Built on
-                            <a href="#" class="link-footer">Forem</a>
-                            — the
-                            <a href="#" class="link-footer">open source</a>
-                            software that powers
-                            <a href="#" class="link-footer">DEV</a>
-                            and other inclusive communities.
+                            <a href="#" class="link-footer">Forem</a> — the
+                            <a href="#" class="link-footer">open source</a> software that powers
+                            <a href="#" class="link-footer">DEV</a> and other inclusive communities.
                         </p>
                         <p>Made with love and
-                            <a href="#" class="link-footer">Ruby on Rails</a>
-                            . DEV Community
-                            <span title="copyright">©</span>
-                            2016 - 2021
+                            <a href="#" class="link-footer">Ruby on Rails</a> . DEV Community
+                            <span title="copyright">©</span> 2016 - 2021
                         </p>
                     </div>
                 </div>
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-8 col-sm-11">
                         <a href="https://www.forem.com" target="_blank" rel="noopener">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                fill="none" role="img" aria-labelledby="a90ameo99abv4mvu74q8kbippd0v8ehc"
-                                class="crayons-icon crayons-icon--default">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" role="img" aria-labelledby="a90ameo99abv4mvu74q8kbippd0v8ehc" class="crayons-icon crayons-icon--default">
                                 <title id="a90ameo99abv4mvu74q8kbippd0v8ehc">Forem logo</title>
                                 <g clip-path="url(#clip0)" fill="#1AB3A6">
                                     <path
@@ -1134,15 +815,23 @@
         </div>
     </footer>
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/filters.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
+    
+
+    <!-- Acceso al archivo js de JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Acceso al archivo con el muestreo de las peticiones a FireBase-->
+    <script src="./js/script_peticiones.js"></script>
+    <script src="./js/scriptIteracionPost.js"></script>
+    <script src="./js/navBarSearch.js"></script>
 </body>
 
 </html>

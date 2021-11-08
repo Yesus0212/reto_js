@@ -77,6 +77,12 @@
         font-weight: 500;
     }
 
+    .campaign_banner {
+        img {
+            width:100vw;
+        }
+    }
+
     .campaign_banner a {
         background: #f9f9f9;
         text-decoration: none;
@@ -90,7 +96,7 @@
             color: #0D122B;
             font-size: 21px;
             font-weight: bold;
-        }
+        }  
     }
 
 }
