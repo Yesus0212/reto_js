@@ -10,7 +10,9 @@ const currentWeek = () => {
 }
 
 
-btnFilters = $('.btn-filter');
+let btnFilters = $('.btn-filter');
+let rightFilters = $('.right-filter');
+
 
 /* Filters Events */
 btnFilters.click(function(event) {
@@ -35,7 +37,9 @@ btnFilters.click(function(event) {
             renderPostsWeek(topYearFilter(yearFilter(postList)));
             break;
         case 'top':
-            console.log('ocultar o mostrar nav izquierdo');
+            /*  $('.right-filter').toggle();
+             console.log(rightFilters); */
+            console.log('cliick en tooop');
             break;
     }
 
@@ -306,15 +310,16 @@ const topYearFilter = (arrayYear) => {
 
 
 const latestFilter = (response) => {
-    let latestArray = [];
+
+    console.log(response);
 
     response.sort((a, b) => {
         console.log(a[1].datePublication.miliseconds - b[1].datePublication.miliseconds);
         return a[1].datePublication.miliseconds - b[1].datePublication.miliseconds;
     })
 
-    console.log(latestArray);
-    return latestArray;
+    console.log(response);
+    return response;
 
 }
 
