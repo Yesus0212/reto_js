@@ -403,9 +403,9 @@ body {
 }
 
 .asideL {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .LBcontIntro {
@@ -682,6 +682,12 @@ body {
   font-size: 0.875rem;
 }
 
+#asideR {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
 .card_link_ar {
   display: block;
   padding: 1rem;
@@ -865,6 +871,149 @@ div .card_link_ar {
 
 .main__body .imgUser {
   width: 3rem;
+}
+
+.main_card .card-body .dataAvatar {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+}
+
+.main_card .card-body .dataAvatar .nickname {
+  position: relative;
+  font-weight: 500;
+  color: #575757;
+  line-height: 1.25;
+  font-size: 0.875rem;
+  padding: 0.25rem;
+  margin-left: 5px;
+}
+
+.main_card .card-body .dataAvatar .nickname:hover {
+  border-radius: 5px;
+  background-color: whitesmoke;
+}
+
+.main_card .card-body .dataAvatar .date {
+  color: #717171;
+  line-height: 1.25;
+  font-size: 0.75rem;
+}
+
+.main_card .card-body .dataAvatar .date:hover {
+  color: black;
+}
+
+.main_card .card-body .titlePost {
+  margin: 0 0 0.5rem 0;
+  color: #090909;
+  line-height: 1.25;
+  font-size: 1.875rem;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main_card .card-body .titlePost:hover {
+  color: #3B49DF;
+}
+
+.main_card .card-body .titlePost a {
+  color: inherit;
+  display: block;
+}
+
+.main_card .card-body .story-tags {
+  margin-bottom: 0.5rem;
+  margin-left: -0.25rem;
+}
+
+.main_card .card-body .story-tags .tag {
+  font-size: 0.875rem;
+  color: #717171;
+  line-height: 1.3;
+  border-radius: 5px;
+  padding: 0.25rem;
+  display: inline-block;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main_card .card-body .story-tags .tag:hover {
+  color: black;
+}
+
+.main_card .card-body .story-tags .tag .prefix {
+  opacity: 0.4;
+  font-weight: normal;
+}
+
+.main_card .card-body .story-btn {
+  padding-left: 0.5rem;
+  font-weight: normal;
+  border-width: 0px;
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  border: 0px solid;
+  background-color: transparent;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #3d3d3d;
+}
+
+.main_card .card-body .story-btn:hover {
+  background-color: whitesmoke;
+}
+
+.main_card .card-body .story-btn .icon {
+  vertical-align: bottom;
+}
+
+.main_card .card-body .story-btn .s:inline {
+  display: inline;
+}
+
+.main_card .card-body .save-time {
+  font-size: 0.75rem;
+  margin-right: 0.5rem;
+  color: #717171;
+}
+
+.main_card .card-body .delete-btn {
+  font-weight: normal;
+  position: relative;
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 5px;
+  outline: none;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: #d6d6d7;
+  border-color: transparent;
+  -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  color: #3d3d3d;
+}
+
+.main_card .card-body .delete-btn:hover {
+  background-color: #bcbcbe;
 }
 
 .text_link {

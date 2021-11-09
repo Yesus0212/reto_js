@@ -121,11 +121,11 @@ const savePost = () => {
 
 
 
-const time = new Date(2021, 10, 02, 13, 23, 41, 379);
-console.log(time);
+// const time = new Date(2021, 10, 02, 13, 23, 41, 379);
+// console.log(time);
 
-const date = time.getTime();
-console.log(typeof(date));
-console.log(date);
+// const date = time.getTime();
+// console.log(typeof(date));
+// console.log(date);
 
-console.log(getWeek(time));
+// console.log(getWeek(time));

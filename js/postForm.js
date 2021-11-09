@@ -113,6 +113,7 @@ $("#saveButton").click((response) => {
         },
         image : postImg,
         likes : 3, 
+        unicorns : 30,
         comments : 1   
     };
 

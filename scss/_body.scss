@@ -105,6 +105,140 @@
     }    
 }
 
+.main_card{
+    .card-body{
+        .dataAvatar{
+            justify-content: flex-start;
+            align-content: flex-start;
+
+            .nickname {
+                position: relative;
+                font-weight: 500;
+                color: #575757;
+                line-height: 1.25;
+                font-size: 0.875rem;
+                padding: 0.25rem;
+                margin-left: 5px;   
+                &:hover {                                        
+                    border-radius: 5px;
+                    background-color: lighten(#3d3d3d, 72);
+                }                                   
+            }
+    
+            .date {
+                color: #717171;
+                line-height: 1.25;
+                font-size: 0.75rem;
+                &:hover {
+                    color: black;;                           
+                }   
+            }    
+        }
+        
+        .titlePost {
+            margin: 0 0 0.5rem 0;
+            color: #090909;
+            line-height: 1.25;
+            font-size: 1.875rem;
+            font-weight: bold;
+            overflow-wrap: anywhere; // Sirve para romper una cadena dentro de una URL, para que no se desborde
+            word-break: break-word; // Tiene la misma función que el overflow-wrap
+            box-sizing: border-box;
+            &:hover {
+                color: #3B49DF;
+            }
+        
+            a {
+                color: inherit;
+                display: block;
+            }  
+        }
+        .story-tags {
+            margin-bottom: 0.5rem;
+            margin-left: -0.25rem;
+            
+            .tag {
+                font-size: 0.875rem;
+                color: #717171;
+                line-height: 1.3;
+                border-radius: 5px;
+                padding: 0.25rem;
+                display: inline-block;
+                box-sizing: border-box;
+                &:hover {
+                    color: black;;                           
+                }                                   
+    
+                .prefix {
+                    opacity: 0.4;
+                    font-weight: normal;
+                }
+            }
+        }
+
+        .story-btn {
+            padding-left: 0.5rem;
+            font-weight: normal;
+            border-width: 0px;
+            position: relative;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 5px;
+            outline: none;
+            font-family: inherit;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            border: 0px solid;
+            background-color: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            color: #3d3d3d;
+            
+            &:hover {
+                background-color: lighten(#3d3d3d, 72)                                                                 
+            }  
+
+            .icon {
+                vertical-align: bottom;                                            
+            }
+
+            .s:inline {
+                display: inline;
+            }
+        }
+                                            
+        .save-time {                                        
+            font-size: 0.75rem;
+            margin-right: 0.5rem;                                        
+            color: #717171;
+        }
+        
+        .delete-btn {
+            font-weight: normal;
+            position: relative;
+            display: inline-block;
+            padding: 0.25rem 0.75rem;                                    
+            border-radius: 5px;
+            outline: none;
+            font-family: inherit;
+            font-size: 0.875rem;
+            line-height: 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            background-color: #d6d6d7;
+            border-color: transparent;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            color: #3d3d3d;
+            
+            &:hover {                                        
+                background-color: darken(#d6d6d7, 10);
+            }   
+        }
+    }
+}
 
 
 // .container {
@@ -260,162 +394,11 @@
 //                                 display: flex;
 //                                 flex-direction: column;
 
-//                                 .nickname {
-//                                     position: relative;
-//                                     font-weight: 500;
-//                                     color: #575757;
-//                                     line-height: 1.25;
-//                                     font-size: 0.875rem;
-//                                     padding: 0.25rem;
-//                                     margin-left: -0.25rem;   
-//                                     &:hover {                                        
-//                                         border-radius: 5px;
-//                                         background-color: lighten(#3d3d3d, 72);
-//                                     }                                   
-//                                 }
-
-//                                 .date {
-//                                     color: #717171;
-//                                     line-height: 1.25;
-//                                     font-size: 0.75rem;
-//                                     &:hover {
-//                                         color: black;;                           
-//                                     }   
-//                                 }
 //                             }
 //                         }
 //                     }
 
-//                     .min-story {                                
-//                         padding-left: 40px; //Suma de variable 1 (2rem) y variable 2 (.5rem)
-//                         font-size: 1.875rem;
-
-//                         .title {
-//                             margin: 0 0 0.5rem 0;
-//                             color: #090909;
-//                             line-height: 1.25;
-//                             font-size: 1.875rem;
-//                             font-weight: bold;
-//                             overflow-wrap: anywhere; // Sirve para romper una cadena dentro de una URL, para que no se desborde
-//                             word-break: break-word; // Tiene la misma función que el overflow-wrap
-//                             box-sizing: border-box;
-//                             &:hover {
-//                                 color: #3B49DF;
-//                             }
-
-//                             a {
-//                                 color: inherit;
-//                                 display: block;
-//                             }                                
-//                         }
-
-//                         .story-tags {
-//                             margin-bottom: 0.5rem;
-//                             margin-left: -0.25rem;
-                            
-//                             .tag {
-//                                 font-size: 0.875rem;
-//                                 color: #717171;
-//                                 line-height: 1.3;
-//                                 border-radius: 5px;
-//                                 padding: 0.25rem;
-//                                 display: inline-block;
-//                                 box-sizing: border-box;
-//                                 &:hover {
-//                                     color: black;;                           
-//                                 }                                   
-
-//                                 .prefix {
-//                                     opacity: 0.4;
-//                                     font-weight: normal;
-//                                 }
-//                             }
-
-//                         }
-
-//                         .story-bottom {
-//                             display: flex;
-//                             justify-content: space-between;
-//                             align-items: center;
-//                             font-size: 0.875rem;
-//                             line-height: 1.25;
-//                             box-sizing: border-box;
-
-//                             .story-details {
-//                                 display: flex;
-//                                 flex-direction: row;
-//                                 align-items: center;
-//                                 margin-left: -0.5rem;
-//                                 box-sizing: border-box;
-
-//                                 .story-btn {
-//                                     padding-left: 0.5rem;
-//                                     font-weight: normal;
-//                                     border-width: 0px;
-//                                     position: relative;
-//                                     display: inline-block;
-//                                     padding: 0.25rem 0.75rem;
-//                                     border-radius: 5px;
-//                                     outline: none;
-//                                     font-family: inherit;
-//                                     font-size: 0.875rem;
-//                                     line-height: 1.5rem;
-//                                     text-align: center;
-//                                     text-decoration: none;
-//                                     border: 0px solid;
-//                                     background-color: transparent;
-//                                     border-color: transparent;
-//                                     box-shadow: none;
-//                                     color: #3d3d3d;
-                                    
-//                                     &:hover {
-//                                         background-color: lighten(#3d3d3d, 72)                                                                 
-//                                     }  
-
-//                                     .icon {
-//                                         vertical-align: bottom;                                            
-//                                     }
-
-//                                     .s:inline {
-//                                         display: inline;
-//                                     }
-//                                 }
-//                             }
-
-//                             .story-save {
-//                                 display: flex;
-//                                 align-items: center;                                    
-
-//                                 .save-time {                                        
-//                                     font-size: 0.75rem;
-//                                     margin-right: 0.5rem;                                        
-//                                     color: #717171;
-//                                 }
-
-//                                 .save-btn {
-//                                     font-weight: normal;
-//                                     position: relative;
-//                                     display: inline-block;
-//                                     padding: 0.25rem 0.75rem;                                    
-//                                     border-radius: 5px;
-//                                     outline: none;
-//                                     font-family: inherit;
-//                                     font-size: 0.875rem;
-//                                     line-height: 1.5rem;
-//                                     text-align: center;
-//                                     text-decoration: none;
-//                                     cursor: pointer;
-//                                     background-color: #d6d6d7;
-//                                     border-color: transparent;
-//                                     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-//                                     color: #3d3d3d;
-                                    
-//                                     &:hover {                                        
-//                                         background-color: darken(#d6d6d7, 10);
-//                                     } 
-//                                 }
-                                
-//                             }
+//                     
 
 
 //                         }
