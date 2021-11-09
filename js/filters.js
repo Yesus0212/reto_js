@@ -317,7 +317,7 @@ const latestFilter = (response) => {
 
     response.sort((a, b) => {
         //console.log(a[1].datePublication.miliseconds - b[1].datePublication.miliseconds);
-        return a[1].datePublication.miliseconds - b[1].datePublication.miliseconds;
+        return b[1].datePublication.miliseconds - a[1].datePublication.miliseconds;
     })
 
     //console.log(response);
