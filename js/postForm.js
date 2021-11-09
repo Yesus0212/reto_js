@@ -124,6 +124,7 @@ $("#saveButton").click((response) => {
         data: JSON.stringify(post),
         success:(response) => {
             console.log(response);
+            window.location.href = '../index.html';
         },
         error:(error) => {
             console.log(error);
