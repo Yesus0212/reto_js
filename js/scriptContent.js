@@ -50,6 +50,8 @@ const renderResPost = (post) => {
     const userName = post[9]
     $('#userName').text(userName);
 
+    $('#userName2').text(userName);
+
     const datePost = dateTimer(post[3]);
     $('p#datePost').text(datePost);
 
