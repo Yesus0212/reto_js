@@ -6,7 +6,7 @@ let randomNumber =""
 
 const dateObj = new Date();
 const month = dateObj.getUTCMonth() + 1;
-const day = dateObj.getUTCDate();
+const day = dateObj.getDate();
 const year = dateObj.getUTCFullYear();
 const week = getWeek(dateObj);
 const mili = dateObj.getTime();

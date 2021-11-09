@@ -4,14 +4,16 @@ const currentWeek = () => {
     currentDate = new Date();
     let oneJan = new Date(currentDate.getFullYear(), 0, 1);
     let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
-    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7) - 2;
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
     return result;
+    console.log(result, 'semana');
 
 }
 
 
 let btnFilters = $('.btn-filter');
 let rightFilters = $('.right-filter');
+
 
 
 /* Filters Events */
@@ -22,23 +24,22 @@ btnFilters.click(function(event) {
 
     switch (filter) {
         case 'feed':
-            renderPostsWeek(feedFilter(postList));
+            renderPosts(feedFilter(postList));
             break;
         case 'latest':
-            renderPostsWeek(latestFilter(postList));
+            renderPosts(latestFilter(postList));
             break;
         case 'week':
-            renderPostsWeek(topWeekFilter(weekFilter(postList)));
+            renderPosts(topWeekFilter(weekFilter(postList)));
             break;
         case 'month':
-            renderPostsWeek(topMonthFilter(monthFilter(postList)));
+            renderPosts(topMonthFilter(monthFilter(postList)));
             break;
         case 'year':
-            renderPostsWeek(topYearFilter(yearFilter(postList)));
+            renderPosts(topYearFilter(yearFilter(postList)));
             break;
         case 'top':
-            /*  $('.right-filter').toggle();
-             console.log(rightFilters); */
+            $('.right-filter').toggleClass('d-flex').toggleClass('dNone');
             console.log('cliick en tooop');
             break;
     }
@@ -208,6 +209,7 @@ const weekFilter = (response) => {
 
     let weekArray = [];
     let week = currentWeek();
+    console.log(week, 'LA semana actual')
 
 
     //console.log(response);
