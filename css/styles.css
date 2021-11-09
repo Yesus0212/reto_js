@@ -1295,6 +1295,14 @@ body {
   color: #090909;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  font-weight: bold;
+}
+
+.createFilter .filterElement2 {
+  font-size: 1.1em;
+  color: #090909;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
 }
 
 .createFilter .item-line {
@@ -1328,8 +1336,7 @@ body {
 }
 
 .editPostBar {
-  padding: 0 18rem;
-  margin: 200px;
+  padding: 0 26rem 0 10rem;
 }
 
 .inputContainer {
