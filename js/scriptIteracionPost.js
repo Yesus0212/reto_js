@@ -221,8 +221,7 @@ const searchPosts = () => {
         url: 'http://localhost:8080/posts',
         data: JSON.stringify({}),
         success: (response) => {
-            postList = response.posts;
-            console.log(postList)            
+            postList = response.posts;           
             renderPosts(postList);
         },
         error: (error) => {
@@ -232,13 +231,14 @@ const searchPosts = () => {
     });
 };
 
+
 const deletePost = (index, postId, event) => {
 
     console.log(event);
 
     $.ajax({
         method: 'DELETE',
-        url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${postId}.json`,
+        url: `http://localhost:8080/posts/${postId}/`,
         data: JSON.stringify({}),
         success: (response) => {
             console.log(response);

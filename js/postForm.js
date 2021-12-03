@@ -6,7 +6,7 @@ let randomNumber =""
 
 const dateObj = new Date();
 const month = dateObj.getUTCMonth() + 1;
-const day = dateObj.getDate();
+const day = dateObj.getUTCDate();
 const year = dateObj.getUTCFullYear();
 const week = getWeek(dateObj);
 const mili = dateObj.getTime();
@@ -18,8 +18,12 @@ let tags =[];
 const renderResult = (response) => {
 
     const result = Object.values(response);
+    const tagObject= result[0]
+    const renderTags= Object.values(tagObject[0])    
+    console.log(renderTags)
 
-    result.forEach(element => {
+
+    renderTags.forEach(element => {
         $("#tagSelector").append(`<option value="${element}" id="${element}">${element}</option>`);
     });   
 };
@@ -27,12 +31,15 @@ const renderResult = (response) => {
 const postResult = (response) => {
 
     const result = Object.values(response);
+    const renderUser = result[0];
+    console.log(renderUser)
 
-    userName = result.map(user => {
+
+    userName = renderUser.map(user => {
         return user.name;
     });
 
-    userImg = result.map(img => {
+    userImg = renderUser.map(img => {
         return img.image;
     });
 
@@ -53,10 +60,11 @@ function getWeek(currentDate){
 //Get Tags
 $.ajax({
     method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/tags/.json',
+    url: 'http://localhost:8080/tags',
     data: JSON.stringify({}),
     success: (response) => {
         renderResult(response)
+        console.log(response)
     },
     error: (error) => {
         console.log(error);
@@ -68,7 +76,7 @@ $.ajax({
 //Get Users
 $.ajax({
     method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/users/.json',
+    url: 'http://localhost:8080/users',
     data: JSON.stringify({}),
     success: (response) => {
         postResult(response)
@@ -113,14 +121,13 @@ $("#saveButton").click((response) => {
         },
         image : postImg,
         likes : 3, 
-        unicorns : 30,
         comments : 1   
     };
 
     //Post create post
     $.ajax({
         method:'POST',
-        url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
+        url:'http://localhost:8080/posts',
         data: JSON.stringify(post),
         success:(response) => {
             console.log(response);
