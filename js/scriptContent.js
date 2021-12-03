@@ -4,7 +4,7 @@ const id = urlParams.get('p');
 
 $.ajax({
     method:'GET',
-    url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${id}.json`,
+    url: `http://localhost:8080/posts/${postId}`,
     data: JSON.stringify({}),
     success: (response) => {
         post2 = Object.keys(response);

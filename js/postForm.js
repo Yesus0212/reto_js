@@ -53,7 +53,7 @@ function getWeek(currentDate){
 //Get Tags
 $.ajax({
     method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/tags/.json',
+    url: 'http://localhost:8080/tags',
     data: JSON.stringify({}),
     success: (response) => {
         renderResult(response)
@@ -68,7 +68,7 @@ $.ajax({
 //Get Users
 $.ajax({
     method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/users/.json',
+    url: 'http://localhost:8080/users',
     data: JSON.stringify({}),
     success: (response) => {
         postResult(response)
@@ -120,7 +120,7 @@ $("#saveButton").click((response) => {
     //Post create post
     $.ajax({
         method:'POST',
-        url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
+        url:'http://localhost:8080/posts',
         data: JSON.stringify(post),
         success:(response) => {
             console.log(response);

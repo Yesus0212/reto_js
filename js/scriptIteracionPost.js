@@ -15,7 +15,7 @@ const renderPosts = (posts) => {
         const imgCover = $('<img alt="" class="img-fluid">');
 
         // DATO DINAMICO DE URL DE COVER IMAGE        
-        imgCover.attr({ src: post[1].coverImage });
+        imgCover.attr({ src: post.coverImage });
 
         // Article que contendrá el articulo
         const article = $('<article class="card-body"></article>');
@@ -26,7 +26,7 @@ const renderPosts = (posts) => {
         const imgUser = $('<img class="rounded-circle p-0 imgUser">');
 
         // DATO DINAMICO DE URL DE IMAGE USER        
-        imgUser.attr({ src: post[1].userImg });
+        imgUser.attr({ src: post.userImg });
         anchorImage.append(imgUser);
         divImgUser.append(anchorImage);
 
@@ -36,7 +36,7 @@ const renderPosts = (posts) => {
         const anchorName = $('<a href="#" class="nickname"></a>')
 
         // DATO DINAMICO DEL NOMBRE DE USUARIO
-        const userName = post[1].user;
+        const userName = post.user;
         anchorName.text(userName);
 
         // Revisar si el href, debe ser dinámico
@@ -44,7 +44,7 @@ const renderPosts = (posts) => {
         const time = $('<time></time>');
 
         // Revisar si el datetime, debe ser dinámico
-        time.text(dateTimer(post[1].datePublication));
+        time.text(dateTimer(post.datePublication));
         anchorTimePost.append(time);
 
         divInfoUser.append(anchorName);
@@ -56,10 +56,10 @@ const renderPosts = (posts) => {
         // Div contenedor Titulo
         const divTitlePost = $('<div class="card-title mb-3"></div>');
         const h2Title = $('<h2 class="titlePost"></h2');
-        const anchorTitle = $(`<a href="./pages/post.html?&p=${post[0]}"></a>`);
+        const anchorTitle = $(`<a href="./pages/post.html?&p=${post._id}"></a>`);
 
         // DATO DINAMICO PARA EL TITULO
-        const title = post[1].title;
+        const title = post.title;
 
         anchorTitle.text(title);
         h2Title.append(anchorTitle);
@@ -70,7 +70,7 @@ const renderPosts = (posts) => {
 
         // DATO DINAMICO PARA LOS TAGS
 
-        const tags = Object.values(post[1].tags);
+        const tags = Object.values(post.tags);
         tags.forEach(tag => {
             const anchorTag = $(`<a href="#" class="tag"><span class="prefix">#</span>${tag}</a>`);
             divTagsPost.append(anchorTag);
@@ -82,7 +82,7 @@ const renderPosts = (posts) => {
 
         // DATO DINAMICO PARA LOS REACTIONS
         const anchorReactions = $('<a href="#" class="story-btn"></a>');
-        const reactions = post[1].likes;
+        const reactions = post.likes;
         // Se valida si las reactions son mayores a cero, en caso contrario, no se pinta el elemento
         if (reactions > 0 && reactions != null) {
             const svgReactions = $('<svg class="icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M18.884 12.595l.01.011L12 19.5l-6.894-6.894.01-.01A4.875 4.875 0 0112 5.73a4.875 4.875 0 016.884 6.865zM6.431 7.037a3.375 3.375 0 000 4.773L12 17.38l5.569-5.569a3.375 3.375 0 10-4.773-4.773L9.613 10.22l-1.06-1.062 2.371-2.372a3.375 3.375 0 00-4.492.25v.001z"></path></svg>');
@@ -102,7 +102,7 @@ const renderPosts = (posts) => {
         const paragraphComments = $('<p class="d-inline-block text-dark m-0"></p>');
 
         // DATO DINAMICO PARA LOS REACTIONS
-        const comments = post[1].comments;
+        const comments = post.comments;
         // Se valida si el número de comentarios es mayor a cero, para mostrar un mensaje u otro
         let spanComments;
         comments > 0 && comments != null ? (paragraphComments.text(comments), spanComments = $('<span class="s:inline">&nbsp;Comments</span>')) : spanComments = $('<span class="s:inline">&nbsp;Add comment</span>');
@@ -117,7 +117,7 @@ const renderPosts = (posts) => {
         const timeRead = 6;
         const smallTextTime = $(`<small class="save-time">${timeRead} min read</small>`);
         const buttonSavePost = $('<button class="delete-btn">Delete</button>');
-        buttonSavePost.attr("data-post", post[0]);
+        buttonSavePost.attr("data-post", post._id);
 
         buttonSavePost.click((event) => {
             postId = event.target.dataset.post;
@@ -218,11 +218,14 @@ const dateTimer = (datePublication) => {
 const searchPosts = () => {
     $.ajax({
         method: 'GET',
-        url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
+        url: 'http://localhost:8080/posts',
         data: JSON.stringify({}),
         success: (response) => {
-            postList = Object.entries(response);            
+            console.log(response) 
+            const  postList = response.posts ;    
+            console.log(response.posts)        
             renderPosts(postList);
+            console.log(response)
         },
         error: (error) => {
             console.log(error);
@@ -231,13 +234,14 @@ const searchPosts = () => {
     });
 };
 
+
 const deletePost = (index, postId, event) => {
 
     console.log(event);
 
     $.ajax({
         method: 'DELETE',
-        url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${postId}.json`,
+        url: `http://localhost:8080/posts/${postId}/`,
         data: JSON.stringify({}),
         success: (response) => {
             console.log(response);
