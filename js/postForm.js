@@ -60,7 +60,7 @@ function getWeek(currentDate) {
 //Get Tags
 $.ajax({
     method: 'GET',
-    url: 'http://localhost:8081/tags',
+    url: 'http://localhost:8080/tags',
     data: JSON.stringify({}),
     success: (response) => {
         renderResult(response)
@@ -76,7 +76,7 @@ $.ajax({
 //Get Users
 $.ajax({
     method: 'GET',
-    url: 'http://localhost:8081/users',
+    url: 'http://localhost:8080/users',
     data: JSON.stringify({}),
     success: (response) => {
         postResult(response)
@@ -128,7 +128,7 @@ $("#saveButton").click((response) => {
     //Post create post
     $.ajax({
         method: 'POST',
-        url: 'http://localhost:8081/posts',
+        url: 'http://localhost:8080/posts',
         headers: {
             'Content-Type': 'application/json'
         },

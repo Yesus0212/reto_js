@@ -216,7 +216,7 @@ const dateTimer = (datePublication) => {
 const searchPosts = () => {
     $.ajax({
         method: 'GET',
-        url: 'http://localhost:8081/posts',
+        url: 'http://localhost:8080/posts',
         data: JSON.stringify({}),
         success: (response) => {
             postList = response.posts;
@@ -236,7 +236,7 @@ const deletePost = (index, postId, event) => {
 
     $.ajax({
         method: 'DELETE',
-        url: `http://localhost:8081/posts/${postId}/`,
+        url: `http://localhost:8080/posts/${postId}/`,
         data: JSON.stringify({}),
         success: (response) => {
             console.log(response);

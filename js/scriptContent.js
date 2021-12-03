@@ -4,14 +4,15 @@ const id = urlParams.get('p');
 
 $.ajax({
     method: 'GET',
-    url: `http://localhost:8081/posts/${id}`,
+    url: `http://localhost:8080/posts/${id}`,
     data: JSON.stringify({}),
     success: (response) => {
-        post2 = Object.keys(response);
-        console.log(post2)
-        post = Object.values(response);
-        postArray = Object.values(post[0]);
-        renderResPost(postArray);
+        // post2 = Object.keys(response);
+        // console.log(post2)
+        // post = Object.values(response);
+        // postArray = Object.values(post[0]);
+        readPost = response.posts;
+        renderResPost(readPost);
 
     },
     error: (error) => {
@@ -26,36 +27,37 @@ const renderResPost = (post) => {
     console.log(post);
 
     // Sección de SCORES DINAMICOS
-    $('.numbers#reactions').text(post[6]);
-    $('.numbers#unicorns').text(post[9]);
-    $('.numbers#comments').text(post[1]);
+    $('.numbers#reactions').text(post.likes);
+    $('.numbers#unicorns').text(post.unicorns);
+    $('.numbers#comments').text(post.comments);
 
     // Dato de imageCover DINAMICO
-    const imgCover = post[4];
+    const imgCover = post.coverImage;
     $('img#imgCover').attr({ src: imgCover });
 
-    const title = post[8];
+    const title = post.title;
     $('h1#title').text(title);
 
     // SIGUEN LOS TAGS
     const divTags = $('div#contTags');
 
-    const tags = Object.values(post[7]);
+    const tags = Object.values(post.tags);
     tags.forEach(tag => {
         const anchorTag = $(`<a href="#" class="text-black-50 me-3"><span class="text-black-50">#</span>${tag}</a>`);
         divTags.append(anchorTag);
     });
 
-    const imgAvatar = post[11];
+    const imgAvatar = post.userImg;
     $('img.avatar').attr({ src: imgAvatar });
 
-    const userName = post[10]
+    const userName = post.user;
     $('#userName').text(userName);
+    $('#userNameRight').text(userName);
 
-    const datePost = dateTimer(post[4]);
+    const datePost = dateTimer(post.datePublication);
     $('p#datePost').text(datePost);
 
-    const content = post[2]
+    const content = post.content;
     $('p#postContent').text(content)
 
 }
@@ -108,8 +110,6 @@ const dateTimer = (datePublication) => {
             compoundDate += `Dec ${datePublication.day}`;
             break;
     }
-
-
 
     return compoundDate;
 

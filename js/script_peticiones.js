@@ -83,7 +83,7 @@ const post = {
 const save = () => {
     $.ajax({
         method: 'POST',
-        url: 'http://localhost:8081/users',
+        url: 'http://localhost:8080/users',
         data: JSON.stringify(user),
         success: (response) => {
             console.log(response);
@@ -110,7 +110,7 @@ function getWeek(currentDate) {
 const savePost = () => {
     $.ajax({
         method: 'POST',
-        url: 'http://localhost:8081/posts',
+        url: 'http://localhost:8080/posts',
         data: JSON.stringify(post),
         success: (response) => {
             console.log(response);
