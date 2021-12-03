@@ -18,8 +18,12 @@ let tags =[];
 const renderResult = (response) => {
 
     const result = Object.values(response);
+    const tagObject= result[0]
+    const renderTags= Object.values(tagObject[0])    
+    console.log(renderTags)
 
-    result.forEach(element => {
+
+    renderTags.forEach(element => {
         $("#tagSelector").append(`<option value="${element}" id="${element}">${element}</option>`);
     });   
 };
@@ -27,12 +31,15 @@ const renderResult = (response) => {
 const postResult = (response) => {
 
     const result = Object.values(response);
+    const renderUser = result[0];
+    console.log(renderUser)
 
-    userName = result.map(user => {
+
+    userName = renderUser.map(user => {
         return user.name;
     });
 
-    userImg = result.map(img => {
+    userImg = renderUser.map(img => {
         return img.image;
     });
 
@@ -57,6 +64,7 @@ $.ajax({
     data: JSON.stringify({}),
     success: (response) => {
         renderResult(response)
+        console.log(response)
     },
     error: (error) => {
         console.log(error);
