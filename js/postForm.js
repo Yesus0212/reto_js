@@ -122,7 +122,7 @@ $("#saveButton").click((response) => {
         image : postImg,
         likes : 3, 
         comments : 1,   
-        unicorns: 23
+        unicorns : 15,
     };
 
     //Post create post
@@ -130,11 +130,12 @@ $("#saveButton").click((response) => {
         method:'POST',
         url:'http://localhost:8080/posts',
         headers:{
-            'Content-Type': 'application/json',
-          },
+            'Content-Type': 'application/json'
+        },
         data: JSON.stringify(post),
         success:(response) => {
             console.log(response);
+            window.location.href = '../index.html';
         },
         error:(error) => {
             console.log(error);

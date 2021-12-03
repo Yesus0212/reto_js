@@ -4,7 +4,7 @@ const id = urlParams.get('p');
 
 $.ajax({
     method:'GET',
-    url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${id}.json`,
+    url: `http://localhost:8080/posts/${postId}`,
     data: JSON.stringify({}),
     success: (response) => {
         post2 = Object.keys(response);
@@ -20,6 +20,8 @@ $.ajax({
 
 
 const renderResPost = (post) => {
+
+    console.log(post);
         
     // Sección de SCORES DINAMICOS
     $('.numbers#reactions').text(post[5]);
@@ -48,9 +50,65 @@ const renderResPost = (post) => {
     const userName = post[9]
     $('#userName').text(userName);
 
+    const datePost = dateTimer(post[3]);
+    $('p#datePost').text(datePost);
+
     const content = post[1]
     $('p#postContent').text(content)
 
 }    
 
 // 3: "datePublication"
+
+const dateTimer = (datePublication) => {
+
+    let compoundDate = "Posted on ";
+
+    const currentDay = new Date().getTime();
+    const days = Math.floor((currentDay - datePublication.miliseconds)/(1000*60*60*24));
+    const hours = Math.floor(((currentDay - datePublication.miliseconds)-(days*(1000*60*60*24)))/(1000*60*60));
+
+    switch(datePublication.month){
+        case 1:
+            compoundDate += `Jan ${datePublication.day}`;
+            break;
+        case 2:
+            compoundDate += `Feb ${datePublication.day}`;
+            break;
+        case 3:
+            compoundDate += `Mar ${datePublication.day}`;
+            break;
+        case 4:
+            compoundDate += `Apr ${datePublication.day}`;
+            break;
+        case 5:
+            compoundDate += `May ${datePublication.day}`;
+            break;
+        case 6:
+            compoundDate += `Jun ${datePublication.day}`;
+            break;
+        case 7:
+            compoundDate += `Jul ${datePublication.day}`;
+            break;
+        case 8:
+            compoundDate += `Aug ${datePublication.day}`;
+            break;
+        case 9:
+            compoundDate += `Sep ${datePublication.day}`;
+            break;
+        case 10:
+            compoundDate += `Oct ${datePublication.day}`;
+            break;
+        case 11:
+            compoundDate += `Nov ${datePublication.day}`;
+            break;
+        case 12:
+            compoundDate += `Dec ${datePublication.day}`;
+            break;
+    }
+
+    
+
+    return compoundDate;
+
+};

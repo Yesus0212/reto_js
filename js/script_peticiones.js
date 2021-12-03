@@ -79,7 +79,7 @@ const post = {
 const save = () => {
     $.ajax({
         method:'POST',
-        url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/users/.json',
+        url:'http://localhost:8080/users',
         data: JSON.stringify(user),
         success:(response) => {
             console.log(response);
@@ -106,7 +106,7 @@ function getWeek(currentDate){
 const savePost = () => {
     $.ajax({
         method:'POST',
-        url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
+        url:'http://localhost:8o8o/posts',
         data: JSON.stringify(post),
         success:(response) => {
             console.log(response);
@@ -121,11 +121,11 @@ const savePost = () => {
 
 
 
-const time = new Date(2021, 10, 02, 13, 23, 41, 379);
-console.log(time);
+// const time = new Date(2021, 10, 02, 13, 23, 41, 379);
+// console.log(time);
 
-const date = time.getTime();
-console.log(typeof(date));
-console.log(date);
+// const date = time.getTime();
+// console.log(typeof(date));
+// console.log(date);
 
-console.log(getWeek(time));
+// console.log(getWeek(time));
