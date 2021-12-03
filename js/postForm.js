@@ -2,49 +2,56 @@
 
 let userName = ""
 let userImg = ""
-let randomNumber =""
+let randomNumber = ""
 
 const dateObj = new Date();
 const month = dateObj.getUTCMonth() + 1;
-const day = dateObj.getDate();
+const day = dateObj.getUTCDate();
 const year = dateObj.getUTCFullYear();
 const week = getWeek(dateObj);
 const mili = dateObj.getTime();
 
-let tagValue ="";
-let tags =[];
+let tagValue = "";
+let tags = [];
 
 // Funciones
 const renderResult = (response) => {
 
     const result = Object.values(response);
+    const tagObject = result[0]
+    const renderTags = Object.values(tagObject[0])
+    console.log(renderTags)
 
-    result.forEach(element => {
+
+    renderTags.forEach(element => {
         $("#tagSelector").append(`<option value="${element}" id="${element}">${element}</option>`);
-    });   
+    });
 };
 
 const postResult = (response) => {
 
     const result = Object.values(response);
+    const renderUser = result[0];
+    console.log(renderUser)
 
-    userName = result.map(user => {
+
+    userName = renderUser.map(user => {
         return user.name;
     });
 
-    userImg = result.map(img => {
+    userImg = renderUser.map(img => {
         return img.image;
     });
 
     const dataLength = userName.length;
 
-    randomNumber = Math.floor(Math.random()*(dataLength))
+    randomNumber = Math.floor(Math.random() * (dataLength))
 };
 
-function getWeek(currentDate){
+function getWeek(currentDate) {
     let oneJan = new Date(currentDate.getFullYear(), 0, 1);
     let numberOfDays = Math.floor((currentDate - oneJan) / (24 * 60 * 60 * 1000));
-    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);    
+    let result = Math.ceil((currentDate.getDay() + 1 + numberOfDays) / 7);
     return result;
 };
 
@@ -56,8 +63,8 @@ $.ajax({
     url: 'http://localhost:8080/tags',
     data: JSON.stringify({}),
     success: (response) => {
-        console.log(response);
-        // renderResult(response)
+        renderResult(response)
+        console.log(response)
     },
     error: (error) => {
         console.log(error);
@@ -69,7 +76,7 @@ $.ajax({
 //Get Users
 $.ajax({
     method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/users/.json',
+    url: 'http://localhost:8080/users',
     data: JSON.stringify({}),
     success: (response) => {
         postResult(response)
@@ -81,7 +88,7 @@ $.ajax({
 });
 
 // Listener select tags
-$(document).on("change", "#tagSelector", ()=> {
+$(document).on("change", "#tagSelector", () => {
     tagValue = $("#tagSelector option:selected").text();
     tags.push(tagValue)
 })
@@ -93,46 +100,49 @@ $("#saveButton").click((response) => {
     let postBody = $("#postBody").val();
     let postImg = $("#postImg").val();
 
-    const post = {    
+    const post = {
         user: userName[randomNumber],
         userImg: userImg[randomNumber],
-        title : titlePost,
-        content : postBody,
-        tags : {
-            t1 : postTags[0],
-            t2 : postTags[1],
-            t3 : postTags[2],
-            t4 : postTags[3]
+        title: titlePost,
+        content: postBody,
+        tags: {
+            t1: postTags[0],
+            t2: postTags[1],
+            t3: postTags[2],
+            t4: postTags[3]
         },
-        coverImage : postImg,
-        datePublication : {
-            day : day,
-            miliseconds : mili,
-            month : month,
-            year : year,
-            week : week
+        coverImage: postImg,
+        datePublication: {
+            day: day,
+            miliseconds: mili,
+            month: month,
+            year: year,
+            week: week
         },
-        image : postImg,
-        likes : 3, 
-        unicorns : 30,
-        comments : 1   
+        image: postImg,
+        likes: 3,
+        comments: 1,
+        unicorns: 15,
     };
 
     //Post create post
     $.ajax({
-        method:'POST',
-        url:'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
+        method: 'POST',
+        url: 'http://localhost:8080/posts',
+        headers: {
+            'Content-Type': 'application/json'
+        },
         data: JSON.stringify(post),
-        success:(response) => {
+        success: (response) => {
             console.log(response);
             window.location.href = '../index.html';
         },
-        error:(error) => {
+        error: (error) => {
             console.log(error);
         },
 
-        async:true,
-    }); 
+        async: true,
+    });
 
 })
 
@@ -162,5 +172,3 @@ const displayContentAside = () => {
     tagAside.css("display", "none")
     contentAside.css("display", "block")
 }
-
-

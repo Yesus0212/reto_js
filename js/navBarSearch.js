@@ -44,7 +44,7 @@ const filtherSearch = (response, imputValue)=> {
     let filtherArray = [];
 
     response.forEach(element => {
-        postContent = element[1].content
+        postContent = element.content
         
         if (postContent.includes(imputValue)) {
             filtherArray.push(element);
