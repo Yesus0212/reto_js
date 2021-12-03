@@ -236,11 +236,7 @@ const deletePost = (index, postId, event) => {
 
     $.ajax({
         method: 'DELETE',
-<<<<<<< HEAD
-        url: `http://localhost:8080/posts/${postId}`,
-=======
         url: `http://localhost:8080/posts/${postId}/`,
->>>>>>> develop
         data: JSON.stringify({}),
         success: (response) => {
             console.log(response);
