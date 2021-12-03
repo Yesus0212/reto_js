@@ -53,10 +53,11 @@ function getWeek(currentDate){
 //Get Tags
 $.ajax({
     method: 'GET',
-    url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/tags/.json',
+    url: 'http://localhost:8080/tags',
     data: JSON.stringify({}),
     success: (response) => {
-        renderResult(response)
+        console.log(response);
+        // renderResult(response)
     },
     error: (error) => {
         console.log(error);

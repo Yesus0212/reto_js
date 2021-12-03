@@ -218,11 +218,12 @@ const dateTimer = (datePublication) => {
 const searchPosts = () => {
     $.ajax({
         method: 'GET',
-        url: 'https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/.json',
-        data: JSON.stringify({}),
+        url: 'http://localhost:8080/posts/',
+        data: JSON.stringify(),
         success: (response) => {
-            postList = Object.entries(response);            
-            renderPosts(postList);
+            console.log(response);
+            // postList = Object.entries(response);            
+            // renderPosts(postList);
         },
         error: (error) => {
             console.log(error);
@@ -237,7 +238,7 @@ const deletePost = (index, postId, event) => {
 
     $.ajax({
         method: 'DELETE',
-        url: `https://desafio-js-3435a-default-rtdb.firebaseio.com/posts/${postId}.json`,
+        url: `http://localhost:8080/posts/${postId}`,
         data: JSON.stringify({}),
         success: (response) => {
             console.log(response);
