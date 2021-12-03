@@ -6,7 +6,7 @@ let randomNumber =""
 
 const dateObj = new Date();
 const month = dateObj.getUTCMonth() + 1;
-const day = dateObj.getDate();
+const day = dateObj.getUTCDate();
 const year = dateObj.getUTCFullYear();
 const week = getWeek(dateObj);
 const mili = dateObj.getTime();
@@ -121,7 +121,6 @@ $("#saveButton").click((response) => {
         },
         image : postImg,
         likes : 3, 
-        unicorns : 30,
         comments : 1   
     };
 
