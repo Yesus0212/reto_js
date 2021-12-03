@@ -24,19 +24,19 @@ btnFilters.click(function(event) {
 
     switch (filter) {
         case 'feed':
-            renderPosts(feedFilter(postList));
+            renderPostsWeek(feedFilter(postList));
             break;
         case 'latest':
-            renderPosts(latestFilter(postList));
+            renderPostsWeek(latestFilter(postList));
             break;
         case 'week':
-            renderPosts(topWeekFilter(weekFilter(postList)));
+            renderPostsWeek(topWeekFilter(weekFilter(postList)));
             break;
         case 'month':
-            renderPosts(topMonthFilter(monthFilter(postList)));
+            renderPostsWeek(topMonthFilter(monthFilter(postList)));
             break;
         case 'year':
-            renderPosts(topYearFilter(yearFilter(postList)));
+            renderPostsWeek(topYearFilter(yearFilter(postList)));
             break;
         case 'top':
             $('.right-filter').toggleClass('d-flex').toggleClass('dNone');
@@ -212,11 +212,11 @@ const weekFilter = (response) => {
     console.log(week, 'LA semana actual')
 
 
-    //console.log(response);
+    console.log(response);
     response.forEach((element) => {
 
-        //console.log(element[1].datePublication.week);
-        if (element.datePublication.week == week) {
+        console.log(element[1].datePublication.week);
+        if (element[1].datePublication.week == week) {
             weekArray.push(element);
         }
 
@@ -229,13 +229,13 @@ const weekFilter = (response) => {
 /* Top week filter */
 const topWeekFilter = (arrayWeek) => {
 
-    //console.log(arrayWeek, 'recibe');
+    console.log(arrayWeek, 'recibe');
     arrayWeek.sort((a, b) => {
 
-        return b.likes - a.likes;
+        return b[1].likes - a[1].likes;
     })
 
-    //console.log(arrayWeek);
+    console.log(arrayWeek);
     return arrayWeek;
 
 }
@@ -250,7 +250,7 @@ const monthFilter = (response) => {
     response.forEach((element) => {
 
 
-        if (element.datePublication.month == month) {
+        if (element[1].datePublication.month == month) {
             monthArray.push(element);
         }
 
@@ -266,10 +266,10 @@ const topMonthFilter = (arrayMonth) => {
 
     arrayMonth.sort((a, b) => {
 
-        return b.likes - a.likes;
+        return b[1].likes - a[1].likes;
     })
 
-    //console.log(arrayMonth);
+    console.log(arrayMonth);
     return arrayMonth;
 }
 
@@ -283,7 +283,7 @@ const yearFilter = (response) => {
 
     response.forEach((element) => {
 
-        if (element.datePublication.year == year) {
+        if (element[1].datePublication.year == year) {
             yearArray.push(element);
         }
 
@@ -299,10 +299,10 @@ const topYearFilter = (arrayYear) => {
 
     arrayYear.sort((a, b) => {
 
-        return b.likes - a.likes;
+        return b[1].likes - a[1].likes;
     })
 
-    //console.log(arrayYear);
+    console.log(arrayYear);
     return arrayYear;
 
 }
@@ -313,14 +313,14 @@ const topYearFilter = (arrayYear) => {
 
 const latestFilter = (response) => {
 
-    //console.log(response);
+    console.log(response);
 
     response.sort((a, b) => {
-        //console.log(a[1].datePublication.miliseconds - b[1].datePublication.miliseconds);
-        return b.datePublication.miliseconds - a.datePublication.miliseconds;
+        console.log(a[1].datePublication.miliseconds - b[1].datePublication.miliseconds);
+        return b[1].datePublication.miliseconds - a[1].datePublication.miliseconds;
     })
 
-    //console.log(response);
+    console.log(response);
     return response;
 
 }
